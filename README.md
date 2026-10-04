@@ -62,6 +62,11 @@ _Chrome Web Store_, review and approve it.
    the protected environment, and the extension ID becomes the
    `CWS_EXTENSION_ID` variable. From then on, _Release_ uploads and submits each
    new version after you approve it.
+   Then run **Actions → Check store credentials** (and approve it): it checks
+   every value is set and in the right secret, and that Google accepts the
+   client ID, secret and refresh token together, without printing any of
+   them. _Release_ runs the same check before each upload. To fix one value:
+   `gh secret set CWS_<NAME> --repo SHINO-01/rolestash-extension --env chrome-web-store`.
 5. **Turn accounts on (launch).** Set three repository _variables_. They're
    public values and they aren't secrets:
    - `WXT_SUPABASE_URL`;
