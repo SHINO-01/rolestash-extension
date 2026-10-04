@@ -6,6 +6,58 @@ release pipeline from the matching source release in
 records exactly which source version every package was built from.
 Developer-level history lives in the source repo's CHANGELOG.
 
+## [0.4.1] — 2026-10-04
+
+Built from source [v0.4.1](https://github.com/SHINO-01/rolestash/releases/tag/v0.4.1).
+
+### Added
+
+- **Your name on your account:** signing in with Google fills it in; with an
+  email code, Account asks once (you can skip). Account shows your name and
+  email separately, and the name appears on your receipts and in
+  subscription management.
+- **A greeting by name** when you open Rolestash ("Good morning, Sam").
+- **A welcome email** when you create an account, with tips and where to get
+  help.
+- **Report a problem** from the board menu or the popup: you see exactly
+  what's sent (version, browser, plan, and the page only if you tick it), and
+  a real person reads it. It works without an account.
+- **A gentle ask to rate Rolestash** on the Chrome Web Store, only after
+  you've used it for a while, and never more than three times.
+
+### Changed
+
+- **A short film on the rolestash.com homepage:** 21 seconds of saving a job,
+  moving it across the board and what Rolestash knows about you. It plays
+  silently while on screen, as a vertical cut on phones; with reduced motion
+  you see the board picture instead.
+- **New pages on rolestash.com:** this changelog, known issues with
+  workarounds, and a sitemap, all linked from the footer.
+- **rolestash.com is easier to find:** a sitemap, robots.txt and llms.txt;
+  clearer titles and descriptions, share cards and structured data on every
+  public page; more links between pages; the pricing switch fits small
+  phones.
+- **Light and dark mode on rolestash.com:** a switch in the header, which
+  remembers your choice; the new theme spreads out from the switch.
+- **A calmer rolestash.com:** one clear promise, three benefits, the facts
+  behind them, answers to common questions and a single Add to Chrome, set in
+  Bricolage Grotesque. Plan details moved to the pricing page.
+- **Big boards stay quick:** each column shows its first 50 cards, with
+  _Show more_ for the rest, so dragging and opening the board don't slow down
+  as you add jobs. The count at the top of the column still includes every
+  job.
+- **Rolestash is on the Chrome Web Store:** rolestash.com's buttons install
+  it from the store, Pricing in the menu opens prices in your currency, and
+  the email form is now for occasional product news.
+
+### Fixed
+
+- **Sync keeps the latest change when a job is deleted on one device and
+  edited on another:** a deletion now counts from when you made it, not when
+  it synced, and undoing a deletion brings the job back on every device.
+- **Google sign-in works in the Chrome Web Store build:** rolestash.com now
+  hands sign-ins to the store's extension as well as the development build.
+
 ## [0.4.0] — 2026-10-02
 
 Built from source [v0.4.0](https://github.com/SHINO-01/rolestash/releases/tag/v0.4.0).
