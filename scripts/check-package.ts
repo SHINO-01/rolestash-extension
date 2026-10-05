@@ -19,6 +19,8 @@ export interface Policy {
   /** Allowed only together, in builds with accounts (identity + the web board's sign-in). */
   accounts: { permissions: string[]; externallyConnectable: string[] };
   allowContentScripts: boolean;
+  /** Files web pages may load (the widget's frame and its button icon). */
+  webAccessibleResources: string[];
   maxPackageKB: number;
 }
 
@@ -54,10 +56,21 @@ export function checkManifest(manifest: Manifest, policy: Policy, expectVersion?
   const optional = sameSet(list(manifest.optional_host_permissions), policy.optionalHostPermissions);
   if (optional.added.length) errors.push(`optional_host_permissions not allowed by policy: ${optional.added.join(', ')}`);
 
-  const contentScripts = Array.isArray(manifest.content_scripts) ? manifest.content_scripts.length : 0;
-  if (!policy.allowContentScripts && contentScripts > 0) {
+  const scripts = Array.isArray(manifest.content_scripts) ? (manifest.content_scripts as Record<string, unknown>[]) : [];
+  if (!policy.allowContentScripts && scripts.length > 0) {
     errors.push('content_scripts are not allowed by policy (the extractor must be injected on demand)');
   }
+  // A content script may run only where the reviewed host permissions already reach.
+  for (const script of scripts) {
+    const outside = list(script.matches).filter((m) => !policy.hostPermissions.includes(m));
+    if (outside.length) errors.push(`content_scripts match pages outside hostPermissions: ${outside.join(', ')}`);
+    if (script.all_frames === true) errors.push('content_scripts must not run in all frames');
+  }
+  const exposed = Array.isArray(manifest.web_accessible_resources)
+    ? (manifest.web_accessible_resources as Record<string, unknown>[]).flatMap((r) => list(r.resources))
+    : [];
+  const extra = exposed.filter((r) => !policy.webAccessibleResources.includes(r));
+  if (extra.length) errors.push(`web_accessible_resources not allowed by policy: ${extra.join(', ')}`);
   const external = manifest.externally_connectable as Record<string, unknown> | undefined;
   if (!accounts) {
     if (external !== undefined) errors.push('externally_connectable is allowed only in accounts builds');
