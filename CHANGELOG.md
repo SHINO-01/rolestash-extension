@@ -6,6 +6,36 @@ release pipeline from the matching source release in
 records exactly which source version every package was built from.
 Developer-level history lives in the source repo's CHANGELOG.
 
+## [0.4.3] — 2026-10-05
+
+Built from source [v0.4.3](https://github.com/SHINO-01/rolestash/releases/tag/v0.4.3).
+
+### Security
+
+- **Trial records are better protected:** the record that stops an email
+  getting a second free trial is now a keyed hash, and one mailbox gets one
+  trial whichever way its address is written.
+- **Shared email learning only counts current subscribers:** votes from an
+  account stop counting when its Advanced subscription ends, and count
+  again if it resubscribes.
+- **Email updates do less work for mail nobody should receive:** a
+  forwarded email is only read once its Rolestash address is confirmed
+  active, and more of the email rules keep a steady speed however an email
+  is written.
+- **Buying on rolestash.com now starts with signing in:** Subscribe on the
+  pricing page asks you to sign in (or create an account) first, and a
+  purchase only ever applies to the account that made it.
+- **Turning off "Help improve automatic updates" always counts:** your
+  choice is now honoured even before you've set up email updates.
+- **A full refund ends the plan straight away,** as the refund policy says,
+  instead of at the end of the period that was refunded.
+- **Nothing is shared during the free trial:** "Help improve automatic
+  updates" now only appears once you subscribe, and a trial sends nothing.
+- **Shared learning is harder to game:** an account can only teach Rolestash
+  about emails it actually received, it now takes five subscribers to agree,
+  and shared learning alone never marks a job rejected or as an offer; it
+  suggests instead.
+
 ## [0.4.2] — 2026-10-05
 
 Built from source [v0.4.2](https://github.com/SHINO-01/rolestash/releases/tag/v0.4.2).
