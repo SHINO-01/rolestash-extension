@@ -6,6 +6,25 @@ release pipeline from the matching source release in
 records exactly which source version every package was built from.
 Developer-level history lives in the source repo's CHANGELOG.
 
+## [0.4.2] — 2026-10-05
+
+Built from source [v0.4.2](https://github.com/SHINO-01/rolestash/releases/tag/v0.4.2).
+
+### Changed
+
+- **New pages on rolestash.com:** every supported job site by region, a page
+  for Australia, how Rolestash keeps your search private, and a guide to
+  tracking job applications with a free spreadsheet template, and
+  side-by-side comparisons with Teal and Huntr.
+
+### Security
+
+- **Shared email learning only counts paying accounts:** accounts on the free
+  trial no longer vote on how other people's forwarded emails are read.
+- **Safer billing:** a subscription is only linked to your account when its
+  billing customer is already yours or carries your email.
+- **Email updates stay fast** however a forwarded email is built.
+
 ## [0.4.1] — 2026-10-04
 
 Built from source [v0.4.1](https://github.com/SHINO-01/rolestash/releases/tag/v0.4.1).
