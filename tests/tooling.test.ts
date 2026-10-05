@@ -11,9 +11,12 @@ const policy = JSON.parse(readFileSync(resolve(root, 'policy/manifest-policy.jso
 const good = {
   manifest_version: 3,
   version: '0.2.0',
-  permissions: ['activeTab', 'scripting', 'storage', 'unlimitedStorage', 'contextMenus', 'alarms', 'sidePanel'],
+  permissions: ['activeTab', 'scripting', 'storage', 'unlimitedStorage', 'contextMenus', 'alarms'],
   optional_permissions: ['notifications'],
+  host_permissions: policy.hostPermissions,
   optional_host_permissions: ['https://*/*', 'http://*/*'],
+  content_scripts: [{ matches: policy.hostPermissions, js: ['content-scripts/launcher.js'] }],
+  web_accessible_resources: [{ resources: ['widget.html', 'icon/48.png'], matches: ['<all_urls>'] }],
 };
 const withAccounts = {
   ...good,
@@ -97,4 +100,24 @@ test('adds a release entry on top, once', () => {
   assert.equal(sectionFor(next, '0.1.0'), 'First.');
   assert.equal(addEntry(next, '0.2.0', '2026-10-06', 'again', 'x'), next);
   assert.match(addEntry('# Changelog\n', '1.0.0', 'd', '', 'u'), /_No notes in the source release\._/);
+});
+
+test('the widget script runs only on the job sites, and exposes only its frame and icon', () => {
+  const everywhere = checkManifest(
+    { ...good, content_scripts: [{ matches: ['<all_urls>'], js: ['content-scripts/launcher.js'] }] },
+    policy,
+  );
+  assert.match(everywhere.join('\n'), /content_scripts match pages outside hostPermissions: <all_urls>/);
+  const frames = checkManifest(
+    { ...good, content_scripts: [{ matches: policy.hostPermissions, all_frames: true }] },
+    policy,
+  );
+  assert.match(frames.join('\n'), /must not run in all frames/);
+  const exposed = checkManifest(
+    { ...good, web_accessible_resources: [{ resources: ['board.html'], matches: ['<all_urls>'] }] },
+    policy,
+  );
+  assert.match(exposed.join('\n'), /web_accessible_resources not allowed by policy: board.html/);
+  const wider = checkManifest({ ...good, host_permissions: [...policy.hostPermissions, '<all_urls>'] }, policy);
+  assert.match(wider.join('\n'), /host_permissions not allowed by policy: <all_urls>/);
 });
