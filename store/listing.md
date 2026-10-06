@@ -110,3 +110,10 @@ Privacy policy URL: https://rolestash.com/privacy/
 5. Autofill profile, started from a résumé.
 
 Regenerate with `npm run store:screenshots` in the source repo. It writes `.output/store-screenshots/`; copy those files here.
+
+## Promo tiles
+
+`store/promo/small-440x280.jpg` (small promo tile) and
+`store/promo/marquee-1400x560.jpg` (marquee promo tile), JPEG with no alpha
+as the store requires. Regenerate with `npm run store:promo` in the source
+repo; it writes `.output/store-promo/`.
