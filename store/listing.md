@@ -37,7 +37,7 @@ ONE BOARD FOR THE WHOLE SEARCH
 • Export to CSV or JSON at any time, on every plan.
 
 FREE
-• Up to 30 active jobs (rejected and withdrawn jobs don't count).
+• Up to 30 active jobs (rejected jobs don't count).
 • Autofill your name, contact details and links on any application form.
 • No account needed. Everything stays in your browser.
 
