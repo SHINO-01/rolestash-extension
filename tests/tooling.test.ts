@@ -11,10 +11,9 @@ const policy = JSON.parse(readFileSync(resolve(root, 'policy/manifest-policy.jso
 const good = {
   manifest_version: 3,
   version: '0.2.0',
-  permissions: ['activeTab', 'scripting', 'storage', 'unlimitedStorage', 'contextMenus', 'alarms'],
+  permissions: ['scripting', 'storage', 'unlimitedStorage', 'contextMenus', 'alarms'],
   optional_permissions: ['notifications'],
   host_permissions: policy.hostPermissions,
-  optional_host_permissions: ['https://*/*', 'http://*/*'],
   content_scripts: [{ matches: policy.hostPermissions, js: ['content-scripts/launcher.js'] }],
   web_accessible_resources: [{ resources: ['widget.html', 'icon/48.png'], matches: ['<all_urls>'] }],
 };
@@ -118,6 +117,6 @@ test('the widget script runs only on the job sites, and exposes only its frame a
     policy,
   );
   assert.match(exposed.join('\n'), /web_accessible_resources not allowed by policy: board.html/);
-  const wider = checkManifest({ ...good, host_permissions: [...policy.hostPermissions, '<all_urls>'] }, policy);
-  assert.match(wider.join('\n'), /host_permissions not allowed by policy: <all_urls>/);
+  const wider = checkManifest({ ...good, host_permissions: [...policy.hostPermissions, 'file:///*'] }, policy);
+  assert.match(wider.join('\n'), /host_permissions not allowed by policy: file:\/\/\/\*/);
 });
