@@ -9,7 +9,7 @@ Rolestash — Job Application Tracker
 
 ## Summary (≤132 characters)
 
-Save any job posting, fill in applications and track every reply on one private board. No AI, no inbox access.
+Save any job posting, fill in applications and track every reply on one private board. No AI, no data selling.
 
 ## Category
 
@@ -42,7 +42,7 @@ FREE
 
 PRO: US$12/month, US$30 every 3 months or US$99/year, in your currency. Try it free for 14 days, no card needed.
 • Unlimited active jobs.
-• Automatic status updates: forward job emails to your private address and the board moves the card ("we'd like to interview you", "unfortunately…"), with interview times and join links on the card. Plain rules, no AI, no access to your mailbox.
+• Automatic status updates: connect Gmail or Outlook (read-only) and the board moves the card when a job email arrives ("we'd like to interview you", "unfortunately…"), with interview times and join links on the card. Job emails are read on your computer, never on our servers, and the board catches up as soon as Chrome opens. Prefer no inbox access? Forward job emails to your private address instead. Plain rules, no AI.
 • Full autofill: your current role, work rights, salary, notice period and saved answers too, with your profile started from your résumé (PDF or Word). It never answers demographic questions and never submits for you.
 • Insights on how your applications are going, plus contacts, interview rounds and documents for every job.
 • Reminders, closing-date alerts, custom columns, bulk actions and your full history.
@@ -50,6 +50,7 @@ PRO: US$12/month, US$30 every 3 months or US$99/year, in your currency. Try it f
 
 PRIVATE BY DESIGN
 • No AI reads your applications. Capture and email updates use plain rules.
+• Connected mail is read on your computer and never reaches our servers.
 • The button reads nothing from a page until you open it. Rolestash doesn't track or record the sites you visit, and you can hide the button on any site.
 • No ads, no analytics, no data selling.
 
@@ -68,7 +69,7 @@ Save job postings from web pages to a personal job-application tracker, and keep
 | `unlimitedStorage` | Job description snapshots can exceed the default 10 MB quota over time. |
 | `contextMenus`     | "Track this job" and "Fill this application" on the page, and "Open board" on the toolbar button. |
 | `alarms`           | Checks every 15 minutes for follow-up reminders and closing dates the user set, while the board is closed. |
-| `identity`         | Optional account sign-in with Google through `chrome.identity.launchWebAuthFlow`. Accounts are optional and used for paid plans and sync. |
+| `identity`         | Optional account sign-in with Google, and connecting Gmail or Outlook read-only for status updates, through `chrome.identity.launchWebAuthFlow`. Accounts are optional and used for paid plans and sync; the mailbox connection is optional too, and mail is read on the user's computer. |
 | `notifications` (optional) | Asked for only when the user turns on follow-up reminders or closing-date alerts, to show them. |
 | Host permissions `https://*/*`, `http://*/*`, with the `launcher` content script on the same pages | Shows the Rolestash button at the edge of web pages, so the user can save the job they're looking at, fill its application and update its status from the page, on any job board, company careers site or applicant tracking system. On each page the script only checks whether a job posting is open (the address and the page's schema.org job data) to label the button "Save job"; it reads nothing else, stores nothing about the page and sends nothing anywhere until the user opens the panel. It never runs in subframes, and the user can hide the button on any site. The same access lets "Capture from a pasted link" read the one page the user pastes. |
 
@@ -86,6 +87,8 @@ Collected (only when the user creates an optional account, or chooses to send a 
 - **Personal communications:**
   - emails the user chooses to forward for automatic status updates (Pro). They're read in memory, and only the extracted update is kept, for at most 90 days;
   - problem reports the user chooses to send us: their message, the extension version, browser, plan, and the page's address only if they tick it. Kept for at most 12 months.
+
+Connected Gmail or Outlook mail (Pro, optional) is read in the extension on the user's computer and is not sent to us, so it isn't "collected"; only the job updates it produces sync if the user turns on sync. Rolestash's use of information received from Google APIs adheres to the Google API Services User Data Policy, including the Limited Use requirements.
 
 Not collected: health, financial or payment information (Paddle handles payments), location, web history, user activity.
 
