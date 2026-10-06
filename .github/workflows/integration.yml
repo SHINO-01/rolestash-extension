@@ -70,6 +70,7 @@ jobs:
           WXT_SUPABASE_URL: ${{ vars.WXT_SUPABASE_URL }}
           WXT_SUPABASE_ANON_KEY: ${{ vars.WXT_SUPABASE_ANON_KEY }}
           WXT_GOOGLE_CLIENT_ID: ${{ vars.WXT_GOOGLE_CLIENT_ID }}
+          WXT_GMAIL_CLIENT_ID: ${{ vars.WXT_GMAIL_CLIENT_ID }}
           WXT_MICROSOFT_CLIENT_ID: ${{ vars.WXT_MICROSOFT_CLIENT_ID }}
         run: |
           npm run zip
