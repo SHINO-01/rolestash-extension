@@ -9,7 +9,7 @@ Rolestash — Job Application Tracker
 
 ## Summary (≤132 characters)
 
-The private job tracker: save postings in one click, autofill applications, track every reply. No AI, no data selling.
+Save jobs from 50+ job sites, fill in applications and track every reply on one private board. No AI, no inbox access.
 
 ## Category
 
@@ -21,36 +21,37 @@ English
 
 ## Description
 
-The private job application tracker. No AI reading your applications, no access to your inbox, no data selling. Free for up to 30 active jobs; Pro is US$12 a month.
+The private job application tracker. Keep your whole job search on one calm board, and save, apply and follow up right where you find the job.
 
-Rolestash turns job postings into cards on a Kanban board, so you always know where every application stands.
+SAVE, APPLY AND TRACK WITHOUT LEAVING THE PAGE
+• On SEEK, LinkedIn, Indeed, Workday, Greenhouse and 50+ other job sites, a small Rolestash button sits at the edge of the page.
+• One click saves the job. Title, company, location, salary and closing date fill themselves in, and anything uncertain is flagged for you to check.
+• From the same panel, fill in the application from your profile and mark the job as Applied.
+• On any other careers page, click the Rolestash icon or press Alt+J.
+• Found the same role on two sites? It stays one card.
 
-CAPTURE IN ONE CLICK
-• On SEEK, LinkedIn, Indeed, Workday, Greenhouse and 50+ other job sites, a small Rolestash button sits at the edge of the page. Click it to save the job, fill the application and mark it applied, without leaving the page.
-• On any other careers page, click the Rolestash icon (or press Alt+J) for the same panel.
-• Title, company, location, salary, closing date and the full description are filled in for you. Anything uncertain is flagged so you can check it before saving.
-• The same job found on two sites stays one card.
+ONE BOARD FOR THE WHOLE SEARCH
+• Drag cards from Saved to Applied, Interviewing and Offer.
+• Notes, tags, priorities and a timeline of every move.
+• Closing dates and follow-ups surface before they slip.
+• Export to CSV or JSON at any time, on every plan.
 
-A BOARD YOU'LL ACTUALLY USE
-• Drag cards through Saved → Applied → Screening → Interviewing → Offer.
-• Notes, tags, priorities, closing-date warnings and a timeline of every move.
-• Autofill your name, contact details, address and links on any application form, free.
-• Up to 30 active jobs free (rejected and withdrawn jobs don't count).
-• Export to CSV or a JSON backup at any time, on every plan.
+FREE
+• Up to 30 active jobs (rejected and withdrawn jobs don't count).
+• Autofill your name, contact details and links on any application form.
+• No account needed. Everything stays in your browser.
 
-PRO: US$12/month, US$30 every 3 months, or US$99/year. Try it free for 14 days, no card needed
+PRO: US$12/month, US$30 every 3 months or US$99/year, in your currency. Try it free for 14 days, no card needed.
 • Unlimited active jobs.
 • Automatic status updates: forward job emails to your private address and the board moves the card ("we'd like to interview you", "unfortunately…"), with interview times and join links on the card. Plain rules, no AI, no access to your mailbox.
-• Full autofill on the common applicant tracking systems and most careers forms: your current role, work rights, salary, notice period and saved answers too, and start your profile from your résumé (PDF or Word). It never answers demographic questions and never submits for you.
-• Insights: applications per week, how far applications get, reply rates, the sites that work best for you, and a chart of where your applications end up.
-• Contacts, interview rounds and documents per job, and a calendar export.
-• Bulk actions, follow-up reminders, closing-date alerts, custom columns, capture from a pasted link and your full history.
-• Sync across up to 5 devices, including your phone through the web board.
+• Full autofill: your current role, work rights, salary, notice period and saved answers too, with your profile started from your résumé (PDF or Word). It never answers demographic questions and never submits for you.
+• Insights on how your applications are going, plus contacts, interview rounds and documents for every job.
+• Reminders, closing-date alerts, custom columns, bulk actions and your full history.
+• Sync across up to 5 devices, including your phone.
 
 PRIVATE BY DESIGN
-• No AI services read your applications. Capture and email updates use plain rules.
-• Rolestash reads a page only when you open it there. Its button on job sites reads nothing until you click it, and it doesn't track the sites you visit.
-• The free plan needs no account, and everything stays in your browser. Accounts and sync are optional.
+• No AI reads your applications. Capture and email updates use plain rules.
+• Rolestash reads a page only when you open it there, and doesn't track the sites you visit.
 • No ads, no analytics, no data selling.
 
 Payments are handled by Paddle.com, our merchant of record. Privacy policy: https://rolestash.com/privacy/
