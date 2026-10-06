@@ -6,6 +6,45 @@ release pipeline from the matching source release in
 records exactly which source version every package was built from.
 Developer-level history lives in the source repo's CHANGELOG.
 
+## [0.4.4] — 2026-10-06
+
+Built from source [v0.4.4](https://github.com/SHINO-01/rolestash/releases/tag/v0.4.4).
+
+### Changed
+
+- **One paid plan:** Pro and Advanced are now one plan, Pro, with
+  everything: unlimited active jobs, status updates from your job emails,
+  full autofill, Insights, contacts and documents, reminders, and sync
+  across 5 devices including your phone. It's US$12 a month, US$30 every 3
+  months or US$99 a year, in your currency, with the 14-day free trial.
+- **Canadian prices read as "$16.99 CAD".**
+- **Rolestash now floats on job sites:** on SEEK, LinkedIn, Indeed, Workday
+  and the other supported sites, a small Rolestash button sits at the edge
+  of the page. It opens a compact panel to save the job, fill the
+  application and mark it applied, without leaving the page. The toolbar
+  icon opens the same panel on any other site. You can hide the button on
+  a site from its menu.
+- **Chrome asks once to allow Rolestash on job sites,** so the button can
+  appear there. It reads a page only when you open the panel.
+- **Less to read, fewer things to click:** Add job has one link box instead
+  of two; Account asks for your name once, drops lines that didn't apply
+  to your plan and shortens its notes; an empty board no longer shows
+  Insights and History, and says where the new button is.
+
+### Removed
+
+- **The side panel and the popup:** the floating panel replaces both.
+
+### Fixed
+
+- **Location, salary and workplace come through more often:** when a page
+  only states them in the job description ("Location: Sydney", "Salary
+  range: $120,000 – $140,000", "this is a hybrid role"), Rolestash now
+  reads them from there and marks them for you to check.
+- **The board's greeting is never cut short:** it now has a row of its own
+  above the board, next to a short summary of your search, and the header
+  keeps only the buttons.
+
 ## [0.4.3] — 2026-10-05
 
 Built from source [v0.4.3](https://github.com/SHINO-01/rolestash/releases/tag/v0.4.3).
