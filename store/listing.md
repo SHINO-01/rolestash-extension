@@ -63,20 +63,18 @@ Save job postings from web pages to a personal job-application tracker, and keep
 
 | Permission         | Justification |
 | ------------------ | ------------- |
-| `activeTab`        | On sites outside the job-site list: opens the Rolestash panel in the current tab, reads the job posting and fills an application form there, only after the user clicks the toolbar button or a context-menu item, or presses the shortcut. |
-| `scripting`        | Injects the bundled extraction script (to read the job), the bundled autofill script (to fill the form) or the panel's script into that one tab, when the user opens the panel or clicks. No remote code. |
+| `scripting`        | Injects the bundled extraction script (to read the job) or the bundled autofill script (to fill the form) into the tab when the user opens the panel or clicks. No remote code. |
 | `storage`          | Saves the user's jobs, settings and autofill profile locally. |
 | `unlimitedStorage` | Job description snapshots can exceed the default 10 MB quota over time. |
 | `contextMenus`     | "Track this job" and "Fill this application" on the page, and "Open board" on the toolbar button. |
 | `alarms`           | Checks every 15 minutes for follow-up reminders and closing dates the user set, while the board is closed. |
 | `identity`         | Optional account sign-in with Google through `chrome.identity.launchWebAuthFlow`. Accounts are optional and used for paid plans and sync. |
 | `notifications` (optional) | Asked for only when the user turns on follow-up reminders or closing-date alerts, to show them. |
-| Host permissions for the supported job sites (`https://*.linkedin.com/*`, `https://*.seek.com.au/*`, `https://*.greenhouse.io/*` and the rest of `policy/manifest-policy.json`), with the `launcher` content script on the same sites | Shows the Rolestash button at the edge of job pages on the sites Rolestash supports, so a job can be saved, its application filled and its status updated from the page. The script draws only the button and the panel's frame: it reads nothing from the page and sends nothing anywhere until the user opens the panel. The user can hide the button per site. |
-| `https://*/*`, `http://*/*` (optional host permissions) | "Capture from a pasted link": when the user pastes a job link, Rolestash asks for access to **that one site** in the same click, reads that page, and removes the access straight afterwards. |
+| Host permissions `https://*/*`, `http://*/*`, with the `launcher` content script on the same pages | Shows the Rolestash button at the edge of web pages, so the user can save the job they're looking at, fill its application and update its status from the page, on any job board, company careers site or applicant tracking system. On each page the script only checks whether a job posting is open (the address and the page's schema.org job data) to label the button "Save job"; it reads nothing else, stores nothing about the page and sends nothing anywhere until the user opens the panel. It never runs in subframes, and the user can hide the button on any site. The same access lets "Capture from a pasted link" read the one page the user pastes. |
 
 `externally_connectable`: only `https://rolestash.com/board/*`, our own web board, may message the extension, to sign the web board in with the same account. No other site can.
 
-Host permissions granted at install: the job sites above, nothing else. Content scripts: one (the button), on those sites only. Web-accessible resources: the panel page and the button's icon, which hold no data. Remote code: none. Every script, including the PDF reader used to read a résumé on the device, is bundled in the package.
+Host permissions granted at install: all http(s) pages, for the button above. Content scripts: one (the button), top frames only. Web-accessible resources: the panel page and the button's icon, which hold no data. Remote code: none. Every script, including the PDF reader used to read a résumé on the device, is bundled in the package.
 
 ## Data usage disclosures (dashboard → Privacy)
 
