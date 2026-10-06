@@ -6,6 +6,21 @@ release pipeline from the matching source release in
 records exactly which source version every package was built from.
 Developer-level history lives in the source repo's CHANGELOG.
 
+## [0.4.5] — 2026-10-06
+
+Built from source [v0.4.5](https://github.com/SHINO-01/rolestash/releases/tag/v0.4.5).
+
+### Changed
+
+- **The Rolestash button is on every page,** not only on job sites, so
+  company careers pages and every applicant tracking system get it too. It
+  shows just the logo until a job posting is open, then says "Save job".
+  Chrome asks once to allow Rolestash on all sites; the button reads
+  nothing from a page until you open the panel.
+- **Put the button where you like:** drag it to any height on the left or
+  right edge (it snaps into place and remembers), or move it with the
+  arrow keys. The panel opens on the same side.
+
 ## [0.4.4] — 2026-10-06
 
 Built from source [v0.4.4](https://github.com/SHINO-01/rolestash/releases/tag/v0.4.4).
