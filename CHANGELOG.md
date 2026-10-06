@@ -6,6 +6,17 @@ release pipeline from the matching source release in
 records exactly which source version every package was built from.
 Developer-level history lives in the source repo's CHANGELOG.
 
+## [0.4.7] — 2026-10-06
+
+Built from source [v0.4.7](https://github.com/SHINO-01/rolestash/releases/tag/v0.4.7).
+
+### Changed
+
+- **The Rolestash button is on job sites by default,** and on every site
+  only if you turn on "Show the button on all sites" (board or widget
+  menu). Chrome asks for less when you install or update, and the toolbar
+  icon still opens Rolestash on any page.
+
 ## [0.4.6] — 2026-10-06
 
 Built from source [v0.4.6](https://github.com/SHINO-01/rolestash/releases/tag/v0.4.6).
