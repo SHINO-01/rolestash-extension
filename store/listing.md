@@ -9,7 +9,7 @@ Rolestash — Job Application Tracker
 
 ## Summary (≤132 characters)
 
-Save jobs from 50+ job sites, fill in applications and track every reply on one private board. No AI, no inbox access.
+Save any job posting, fill in applications and track every reply on one private board. No AI, no inbox access.
 
 ## Category
 
@@ -24,10 +24,9 @@ English
 The private job application tracker. Keep your whole job search on one calm board, and save, apply and follow up right where you find the job.
 
 SAVE, APPLY AND TRACK WITHOUT LEAVING THE PAGE
-• On SEEK, LinkedIn, Indeed, Workday, Greenhouse and 50+ other job sites, a small Rolestash button sits at the edge of the page.
+• A small Rolestash button sits at the edge of every page, and says "Save job" when a posting is open: on SEEK, LinkedIn, Indeed, Workday, Greenhouse or any company's careers page. Drag it wherever suits you.
 • One click saves the job. Title, company, location, salary and closing date fill themselves in, and anything uncertain is flagged for you to check.
 • From the same panel, fill in the application from your profile and mark the job as Applied.
-• On any other careers page, click the Rolestash icon or press Alt+J.
 • Found the same role on two sites? It stays one card.
 
 ONE BOARD FOR THE WHOLE SEARCH
@@ -51,7 +50,7 @@ PRO: US$12/month, US$30 every 3 months or US$99/year, in your currency. Try it f
 
 PRIVATE BY DESIGN
 • No AI reads your applications. Capture and email updates use plain rules.
-• Rolestash reads a page only when you open it there, and doesn't track the sites you visit.
+• The button reads nothing from a page until you open it. Rolestash doesn't track or record the sites you visit, and you can hide the button on any site.
 • No ads, no analytics, no data selling.
 
 Payments are handled by Paddle.com, our merchant of record. Privacy policy: https://rolestash.com/privacy/
