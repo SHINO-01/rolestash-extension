@@ -24,7 +24,8 @@ English
 The private job application tracker. Keep your whole job search on one calm board, and save, apply and follow up right where you find the job.
 
 SAVE, APPLY AND TRACK WITHOUT LEAVING THE PAGE
-• A small Rolestash button sits at the edge of every page, and says "Save job" when a posting is open: on SEEK, LinkedIn, Indeed, Workday, Greenhouse or any company's careers page. Drag it wherever suits you.
+• On SEEK, LinkedIn, Indeed, Workday, Greenhouse and 50+ other job sites, a small Rolestash button sits at the edge of the page and says "Save job" when a posting is open. Drag it wherever suits you, or turn it on for every site.
+• On any other careers page, click the Rolestash icon or press Alt+J.
 • One click saves the job. Title, company, location, salary and closing date fill themselves in, and anything uncertain is flagged for you to check.
 • From the same panel, fill in the application from your profile and mark the job as Applied.
 • Found the same role on two sites? It stays one card.
@@ -71,11 +72,13 @@ Save job postings from web pages to a personal job-application tracker, and keep
 | `alarms`           | Checks every 15 minutes for follow-up reminders and closing dates the user set, while the board is closed. |
 | `identity`         | Optional account sign-in with Google, and connecting Gmail or Outlook read-only for status updates, through `chrome.identity.launchWebAuthFlow`. Accounts are optional and used for paid plans and sync; the mailbox connection is optional too, and mail is read on the user's computer. |
 | `notifications` (optional) | Asked for only when the user turns on follow-up reminders or closing-date alerts, to show them. |
-| Host permissions `https://*/*`, `http://*/*`, with the `launcher` content script on the same pages | Shows the Rolestash button at the edge of web pages, so the user can save the job they're looking at, fill its application and update its status from the page, on any job board, company careers site or applicant tracking system. On each page the script only checks whether a job posting is open (the address and the page's schema.org job data) to label the button "Save job"; it reads nothing else, stores nothing about the page and sends nothing anywhere until the user opens the panel. It never runs in subframes, and the user can hide the button on any site. The same access lets "Capture from a pasted link" read the one page the user pastes. |
+| `activeTab`        | On sites outside the job-site list: opens the Rolestash panel in the current tab, reads the job posting and fills an application form there, only after the user clicks the toolbar button or a context-menu item, or presses the shortcut. |
+| Host permissions for the supported job sites (`https://*.linkedin.com/*`, `https://*.seek.com.au/*`, `https://*.greenhouse.io/*` and the rest of `policy/manifest-policy.json`), with the `launcher` content script on the same sites | Shows the Rolestash button at the edge of job pages on the sites Rolestash supports, so a job can be saved, its application filled and its status updated from the page. The script only checks whether a job posting is open (the address and the page's schema.org job data) to label the button "Save job"; it reads nothing else and sends nothing anywhere until the user opens the panel. It never runs in subframes, and the user can hide the button per site. |
+| `https://*/*`, `http://*/*` (optional host permissions) | Asked for only when the user turns on "Show the button on all sites": the same button on every other site, registered at that moment and removed if the user turns it off. Also "Capture from a pasted link": access to that one site, asked for in the click and removed afterwards. |
 
 `externally_connectable`: only `https://rolestash.com/board/*`, our own web board, may message the extension, to sign the web board in with the same account. No other site can.
 
-Host permissions granted at install: all http(s) pages, for the button above. Content scripts: one (the button), top frames only. Web-accessible resources: the panel page and the button's icon, which hold no data. Remote code: none. Every script, including the PDF reader used to read a résumé on the device, is bundled in the package.
+Host permissions granted at install: the job sites above, nothing else. Content scripts: one (the button), on those sites (and on all sites only if the user turns that on), top frames only. Web-accessible resources: the panel page and the button's icon, which hold no data. Remote code: none. Every script, including the PDF reader used to read a résumé on the device, is bundled in the package.
 
 ## Data usage disclosures (dashboard → Privacy)
 

@@ -11,9 +11,10 @@ const policy = JSON.parse(readFileSync(resolve(root, 'policy/manifest-policy.jso
 const good = {
   manifest_version: 3,
   version: '0.2.0',
-  permissions: ['scripting', 'storage', 'unlimitedStorage', 'contextMenus', 'alarms'],
+  permissions: ['activeTab', 'scripting', 'storage', 'unlimitedStorage', 'contextMenus', 'alarms'],
   optional_permissions: ['notifications'],
   host_permissions: policy.hostPermissions,
+  optional_host_permissions: ['https://*/*', 'http://*/*'],
   content_scripts: [{ matches: policy.hostPermissions, js: ['content-scripts/launcher.js'] }],
   web_accessible_resources: [{ resources: ['widget.html', 'icon/48.png'], matches: ['<all_urls>'] }],
 };
