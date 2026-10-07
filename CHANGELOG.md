@@ -6,6 +6,17 @@ release pipeline from the matching source release in
 records exactly which source version every package was built from.
 Developer-level history lives in the source repo's CHANGELOG.
 
+## [0.6.1] — 2026-10-07
+
+Built from source [v0.6.1](https://github.com/SHINO-01/rolestash/releases/tag/v0.6.1).
+
+### Changed
+
+- **Rejected is a lane again:** the board has five lanes, Saved, Applied,
+  Interviewing, Offer and Rejected, so turned-down applications stay in view.
+  Rejected jobs still don't count toward the Free plan's 30 active jobs, and
+  new jobs still start in one of the first four.
+
 ## [0.6.0] — 2026-10-07
 
 Built from source [v0.6.0](https://github.com/SHINO-01/rolestash/releases/tag/v0.6.0).
