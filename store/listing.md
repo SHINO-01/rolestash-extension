@@ -47,13 +47,14 @@ PRO: US$12/month, US$30 every 3 months or US$99/year, in your currency. Try it f
 • Full autofill: your current role, work rights, salary, notice period and saved answers too, with your profile started from your résumé (PDF or Word). It never answers demographic questions and never submits for you.
 • Insights on how your applications are going, plus contacts, interview rounds and documents for every job.
 • Reminders, closing-date alerts, custom columns, bulk actions and your full history.
-• Sync across up to 5 devices, including your phone.
+• Sync across up to 5 devices, including your phone: scan the QR code in Account to open your board there.
 
 PRIVATE BY DESIGN
 • No AI reads your applications. Capture and email updates use plain rules.
 • Connected mail is read on your computer and never reaches our servers.
 • The button reads nothing from a page until you open it. Rolestash doesn't track or record the sites you visit, and you can hide the button on any site.
 • No ads, no analytics, no data selling.
+• Accounts are optional. Sign in with an emailed code, Google or a password, and turn on two-step sign-in with any authenticator app.
 
 Payments are handled by Paddle.com, our merchant of record. Privacy policy: https://rolestash.com/privacy/
 
@@ -85,7 +86,7 @@ Host permissions granted at install: the job sites above, nothing else. Content 
 Collected (only when the user creates an optional account, or chooses to send a problem report):
 
 - **Personally identifiable information:** email address, the user's full name (from their Google account, or typed by them; they can skip it), and optionally a profile photo. With a problem report, an email address for our reply if the user gives one.
-- **Authentication information:** sign-in session tokens. No passwords.
+- **Authentication information:** sign-in session tokens; a password only if the user adds one (sent to our sign-in provider, Supabase Auth, over HTTPS and stored only as a salted hash); and, only if the user turns on two-step sign-in, the authenticator app's secret key, kept by Supabase Auth to check their codes.
 - **Website content:** the job postings the user saves, when they turn on sync.
 - **Personal communications:**
   - emails the user chooses to forward for automatic status updates (Pro). They're read in memory, and only the extracted update is kept, for at most 90 days;
