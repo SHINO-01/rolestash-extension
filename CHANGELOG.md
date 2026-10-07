@@ -6,6 +6,39 @@ release pipeline from the matching source release in
 records exactly which source version every package was built from.
 Developer-level history lives in the source repo's CHANGELOG.
 
+## [0.6.0] — 2026-10-07
+
+Built from source [v0.6.0](https://github.com/SHINO-01/rolestash/releases/tag/v0.6.0).
+
+### Added
+
+- **Invite friends:** Account shows your referral link when the referral
+  programme is running. Friends get money off their first month of Pro, and
+  you get a free month for each one who stays past 14 days.
+- **Discount codes:** add a code on the pricing page, or follow a promo link,
+  and it's applied at checkout.
+- **Optional password:** Account → Security lets you add a password and sign
+  in with it, instead of waiting for a code. It must be at least 12
+  characters and not easy to guess (checked on your device). Codes and
+  Google keep working. "Forgot password?" emails a link to choose a new one,
+  which signs out every device.
+- **Two-step sign-in:** turn it on in Account → Security with any
+  authenticator app (Google or Microsoft Authenticator, 1Password, Authy).
+  Every sign-in then also asks for the app's code, so someone who gets into
+  your email still can't get in. Add a backup app in case you lose your
+  phone.
+- **Sign out everywhere:** Account → Security ends your sessions on every
+  device at once.
+- **Your board on your phone:** Account → Sync shows a QR code for the web
+  board. Scan it, sign in with the same email, and add it to your home
+  screen.
+- **Report a problem on the web board:** Account on the web board now has
+  _Report a problem_, so you can tell us about an issue from your phone too.
+
+### Changed
+
+- **Complimentary Pro with an end date** now shows that date in Account.
+
 ## [0.5.0] — 2026-10-06
 
 Built from source [v0.5.0](https://github.com/SHINO-01/rolestash/releases/tag/v0.5.0).
