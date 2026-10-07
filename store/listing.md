@@ -31,7 +31,7 @@ SAVE, APPLY AND TRACK WITHOUT LEAVING THE PAGE
 • Found the same role on two sites? It stays one card.
 
 ONE BOARD FOR THE WHOLE SEARCH
-• Drag cards from Saved to Applied, Interviewing and Offer.
+• Drag cards from Saved to Applied, Interviewing, Offer and Rejected.
 • Notes, tags, priorities and a timeline of every move.
 • Closing dates and follow-ups surface before they slip.
 • Export to CSV or JSON at any time, on every plan.
