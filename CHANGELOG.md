@@ -6,6 +6,25 @@ release pipeline from the matching source release in
 records exactly which source version every package was built from.
 Developer-level history lives in the source repo's CHANGELOG.
 
+## [0.6.5] — 2026-10-08
+
+Built from source [v0.6.5](https://github.com/SHINO-01/rolestash/releases/tag/v0.6.5).
+
+### Fixed
+
+- **Someone else signing in on the same browser starts clean.** Sync, a
+  connected inbox and email updates belonged to the last person, so they're
+  reset, and jobs left on the board aren't synced into the new account: a
+  notice asks whether to keep them or remove them from this browser.
+- **Signing out disconnects a connected inbox,** so mail access ends with you.
+- **Smoother guided tour:** the spotlight and the card glide between steps
+  and follow what they point at without lagging or flickering.
+
+### Changed
+
+- **Gmail for Google's review goes by a tester grant on the server,** so no
+  account is named in the extension.
+
 ## [0.6.4] — 2026-10-08
 
 Built from source [v0.6.4](https://github.com/SHINO-01/rolestash/releases/tag/v0.6.4).
