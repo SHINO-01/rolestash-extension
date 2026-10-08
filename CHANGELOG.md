@@ -6,6 +6,17 @@ release pipeline from the matching source release in
 records exactly which source version every package was built from.
 Developer-level history lives in the source repo's CHANGELOG.
 
+## [0.6.3] — 2026-10-08
+
+Built from source [v0.6.3](https://github.com/SHINO-01/rolestash/releases/tag/v0.6.3).
+
+### Changed
+
+- **Connecting Gmail is paused** until Google finishes reviewing Rolestash's
+  read-only Gmail access, so nobody sees Google's "unverified app" warning.
+  Forwarding your job emails still updates your board.
+- Everything listed under 0.6.2 below, which wasn't published on its own.
+
 ## [0.6.2] — 2026-10-08
 
 Built from source [v0.6.2](https://github.com/SHINO-01/rolestash/releases/tag/v0.6.2).
