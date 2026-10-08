@@ -6,6 +6,33 @@ release pipeline from the matching source release in
 records exactly which source version every package was built from.
 Developer-level history lives in the source repo's CHANGELOG.
 
+## [0.6.4] — 2026-10-08
+
+Built from source [v0.6.4](https://github.com/SHINO-01/rolestash/releases/tag/v0.6.4).
+
+### Changed
+
+- **Gmail stays paused for everyone except Google's reviewers,** who can
+  connect it to check Rolestash before approving it. Mailboxes connected
+  earlier keep working.
+
+### Fixed
+
+- **A connected inbox reads new job emails straight away,** however much
+  older job-board mail it holds. It used to work through the last two weeks
+  oldest first, so on a busy inbox a new email could wait many checks.
+  LinkedIn, SEEK and Indeed alerts no longer count as job emails; their
+  application emails still do.
+- **Updates arrive within about a minute** while your board is open with
+  Gmail or Outlook connected (even on another tab), and as soon as you come
+  back to the board. It used to wait up to five minutes unless you clicked
+  Check now.
+- **A notification when an email updates a card** while you're on another
+  tab or app (turn it on under your connected mailbox). Click it to open the
+  card.
+- **Check now says what happened:** it no longer says "Your board is up to
+  date" when the check was skipped or couldn't reach the inbox.
+
 ## [0.6.3] — 2026-10-08
 
 Built from source [v0.6.3](https://github.com/SHINO-01/rolestash/releases/tag/v0.6.3).
