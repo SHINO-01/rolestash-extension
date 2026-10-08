@@ -6,6 +6,42 @@ release pipeline from the matching source release in
 records exactly which source version every package was built from.
 Developer-level history lives in the source repo's CHANGELOG.
 
+## [0.6.2] — 2026-10-08
+
+Built from source [v0.6.2](https://github.com/SHINO-01/rolestash/releases/tag/v0.6.2).
+
+### Added
+
+- **A guided tour:** the first time you open Rolestash, a short tour shows
+  every part of the board: saving jobs from job sites, the lanes, a card's
+  details, adding jobs yourself, search, Insights, History, selecting several
+  jobs, the menu, autofill and accounts. You try dragging and opening a
+  practice card, which is removed when the tour ends. Skip or close it at any
+  step (Esc works too). It works with a keyboard and a screen reader.
+- **Already using Rolestash?** Your board isn't interrupted: a small card in
+  the corner offers the tour, and your own jobs are never changed by it.
+- **Help (?) → How do I…?:** forgot how something works? Pick a feature (moving
+  a job, editing columns, autofill, exports…) and Rolestash shows you, step by
+  step, on your own board. The full tour, keyboard shortcuts, the help pages
+  and Report a problem are in Help too.
+- **A quick guide in the widget:** the first time the Save job panel shows a
+  job, three short tips explain what it found, the lanes and saving.
+- **The board opens after you install Rolestash,** so the tour can start.
+
+### Changed
+
+- **Pages that aren't job postings say so:** the Save job panel no longer
+  opens a job form titled after a news article or a search page. It says the
+  page doesn't look like a job posting and points you to job sites and your
+  board. You can still save the page if it is a job.
+- **A clearer empty board:** three steps to your first saved job, with
+  buttons for the tour and for adding a job yourself.
+- **The board menu is grouped** into Board, Export and backup, Save job button
+  and Theme. Keyboard shortcuts and Report a problem moved to Help.
+- **Easier to read:** small grey text (dates, counts, hints) has more
+  contrast, in light and dark mode.
+- **The widget's board button now says "Board".**
+
 ## [0.6.1] — 2026-10-07
 
 Built from source [v0.6.1](https://github.com/SHINO-01/rolestash/releases/tag/v0.6.1).
