@@ -6,6 +6,15 @@ release pipeline from the matching source release in
 records exactly which source version every package was built from.
 Developer-level history lives in the source repo's CHANGELOG.
 
+## [0.6.6] — 2026-10-08
+
+Built from source [v0.6.6](https://github.com/SHINO-01/rolestash/releases/tag/v0.6.6).
+
+### Fixed
+
+- **The guided tour stays put when a job's details open or close:** it no
+  longer blinks or jumps while the panel slides.
+
 ## [0.6.5] — 2026-10-08
 
 Built from source [v0.6.5](https://github.com/SHINO-01/rolestash/releases/tag/v0.6.5).
