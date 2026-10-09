@@ -24,7 +24,7 @@ English
 The private job application tracker. Keep your whole job search on one calm board, and save, apply and follow up right where you find the job.
 
 SAVE, APPLY AND TRACK WITHOUT LEAVING THE PAGE
-• On SEEK, LinkedIn, Indeed, Workday, Greenhouse and 50+ other job sites, a small Rolestash button sits at the edge of the page and says "Save job" when a posting is open. Drag it wherever suits you, or turn it on for every site.
+• On SEEK, LinkedIn, Indeed, Workday, Greenhouse and 40+ other supported job sites, a small Rolestash button sits at the edge of the page and says "Save job" when a posting is open. Drag it wherever suits you, or turn it on for every site.
 • On any other careers page, click the Rolestash icon or press Alt+J.
 • One click saves the job. Title, company, location, salary and closing date fill themselves in, and anything uncertain is flagged for you to check.
 • From the same panel, fill in the application from your profile and mark the job as Applied.
@@ -43,7 +43,7 @@ FREE
 
 PRO: US$12/month, US$30 every 3 months or US$99/year, in your currency. Try it free for 14 days, no card needed.
 • Unlimited active jobs.
-• Automatic status updates: connect Gmail or Outlook (read-only) and the board moves the card when a job email arrives ("we'd like to interview you", "unfortunately…"), with interview times and join links on the card. Job emails are read on your computer, never on our servers, and the board catches up as soon as Chrome opens. Prefer no inbox access? Forward job emails to your private address instead. Plain rules, no AI.
+• Automatic status updates: forward job emails to your private address with a filter in your mail app, and the board moves the card when a reply arrives ("we'd like to interview you", "unfortunately…"), with interview times and join links on the card. No inbox access needed: Rolestash keeps the update, never the email. Plain rules, no AI. (A read-only Gmail connection, read on your computer, is waiting for Google's review.)
 • Full autofill: your current role, work rights, salary, notice period and saved answers too, with your profile started from your résumé (PDF or Word). It never answers demographic questions and never submits for you.
 • Insights on how your applications are going, plus contacts, interview rounds and documents for every job.
 • Reminders, closing-date alerts, custom columns, bulk actions and your full history.
@@ -51,8 +51,8 @@ PRO: US$12/month, US$30 every 3 months or US$99/year, in your currency. Try it f
 
 PRIVATE BY DESIGN
 • No AI reads your applications. Capture and email updates use plain rules.
-• Connected mail is read on your computer and never reaches our servers.
-• The button reads nothing from a page until you open it. Rolestash doesn't track or record the sites you visit, and you can hide the button on any site.
+• Email updates need no access to your inbox: forwarded emails are read with plain rules and only the update is kept.
+• On job sites, the button only checks whether a job posting is open; it reads nothing else, and stores and sends nothing, until you open it. Rolestash doesn't track or record the sites you visit, and you can hide the button on any site.
 • No ads, no analytics, no data selling.
 • Accounts are optional. Sign in with an emailed code, Google or a password, and turn on two-step sign-in with any authenticator app.
 
@@ -60,7 +60,7 @@ Payments are handled by Paddle.com, our merchant of record. Privacy policy: http
 
 ## Single purpose
 
-Save job postings from web pages to a personal job-application tracker, and keep that tracker up to date: filling applications from the user's own details and recording replies the user forwards.
+Save job postings from web pages to a personal job-application tracker, and keep that tracker up to date: filling applications from the user's own details and recording replies from employers, from emails the user forwards or, if they connect it, their own mailbox read on their device.
 
 ## Permission justifications
 
@@ -71,8 +71,8 @@ Save job postings from web pages to a personal job-application tracker, and keep
 | `unlimitedStorage` | Job description snapshots can exceed the default 10 MB quota over time. |
 | `contextMenus`     | "Track this job" and "Fill this application" on the page, and "Open board" on the toolbar button. |
 | `alarms`           | Checks every 15 minutes for follow-up reminders and closing dates the user set, while the board is closed. |
-| `identity`         | Optional account sign-in with Google, and connecting Gmail or Outlook read-only for status updates, through `chrome.identity.launchWebAuthFlow`. Accounts are optional and used for paid plans and sync; the mailbox connection is optional too, and mail is read on the user's computer. |
-| `notifications` (optional) | Asked for only when the user turns on follow-up reminders or closing-date alerts, to show them. |
+| `identity`         | Optional account sign-in with Google, and connecting Gmail read-only for status updates, through `chrome.identity.launchWebAuthFlow`. Accounts are optional and used for paid plans and sync; the mailbox connection is optional too, and mail is read on the user's computer. |
+| `notifications` (optional) | Asked for only when the user turns on follow-up reminders, closing-date alerts or notifications for status updates from their connected mailbox, to show them. |
 | `activeTab`        | On sites outside the job-site list: opens the Rolestash panel in the current tab, reads the job posting and fills an application form there, only after the user clicks the toolbar button or a context-menu item, or presses the shortcut. |
 | Host permissions for the supported job sites (`https://*.linkedin.com/*`, `https://*.seek.com.au/*`, `https://*.greenhouse.io/*` and the rest of `policy/manifest-policy.json`), with the `launcher` content script on the same sites | Shows the Rolestash button at the edge of job pages on the sites Rolestash supports, so a job can be saved, its application filled and its status updated from the page. The script only checks whether a job posting is open (the address and the page's schema.org job data) to label the button "Save job"; it reads nothing else and sends nothing anywhere until the user opens the panel. It never runs in subframes, and the user can hide the button per site. |
 | `https://*/*`, `http://*/*` (optional host permissions) | Asked for only when the user turns on "Show the button on all sites": the same button on every other site, registered at that moment and removed if the user turns it off. Also "Capture from a pasted link": access to that one site, asked for in the click and removed afterwards. |
@@ -85,14 +85,15 @@ Host permissions granted at install: the job sites above, nothing else. Content 
 
 Collected (only when the user creates an optional account, or chooses to send a problem report):
 
-- **Personally identifiable information:** email address, the user's full name (from their Google account, or typed by them; they can skip it), and optionally a profile photo. With a problem report, an email address for our reply if the user gives one.
+- **Personally identifiable information:** email address, the user's full name (from their Google account, or typed by them; they can skip it), and optionally a profile photo. With sync on, the contacts the user adds to jobs (such as a recruiter's name, email and phone). With a problem report, an email address for our reply if the user gives one.
 - **Authentication information:** sign-in session tokens; a password only if the user adds one (sent to our sign-in provider, Supabase Auth, over HTTPS and stored only as a salted hash); and, only if the user turns on two-step sign-in, the authenticator app's secret key, kept by Supabase Auth to check their codes.
-- **Website content:** the job postings the user saves, when they turn on sync.
+- **Website content:** the job postings the user saves, with their notes, when they turn on sync.
 - **Personal communications:**
   - emails the user chooses to forward for automatic status updates (Pro). They're read in memory, and only the extracted update is kept, for at most 90 days;
+  - with sync on, the status update on a job card and its reason: the email's subject, sender and date (from forwarded email or a connected mailbox);
   - problem reports the user chooses to send us: their message, the extension version, browser, plan, and the page's address only if they tick it. Kept for at most 12 months.
 
-Connected Gmail or Outlook mail (Pro, optional) is read in the extension on the user's computer and is not sent to us, so it isn't "collected"; only the job updates it produces sync if the user turns on sync. Rolestash's use of information received from Google APIs adheres to the Google API Services User Data Policy, including the Limited Use requirements.
+Connected Gmail (Pro, optional; offered only to testers until Google verifies it) is read in the extension on the user's computer and the emails are not sent to us; only the job updates it produces (listed above) sync if the user turns on sync. Rolestash's use of information received from Google APIs adheres to the Google API Services User Data Policy, including the Limited Use requirements.
 
 Not collected: health, financial or payment information (Paddle handles payments), location, web history, user activity.
 
