@@ -6,6 +6,25 @@ release pipeline from the matching source release in
 records exactly which source version every package was built from.
 Developer-level history lives in the source repo's CHANGELOG.
 
+## [0.6.7] — 2026-10-09
+
+Built from source [v0.6.7](https://github.com/SHINO-01/rolestash/releases/tag/v0.6.7).
+
+### Changed
+
+- **Connect Gmail is back for every Pro user:** read-only, read on your
+  computer, so your board updates itself without forwarding. Google is still
+  reviewing Rolestash's Gmail access, so it shows a warning that the app isn't
+  verified; the panel says how to go on.
+
+### Fixed
+
+- **No empty "Connect your inbox" box:** when there's no mailbox to connect,
+  Automatic status updates shows just the forwarding address.
+- **The connect panel says how often it checks** (about every minute while
+  the board is open, every 5 minutes while Chrome is), and that the update,
+  not the email, is what's kept.
+
 ## [0.6.6] — 2026-10-08
 
 Built from source [v0.6.6](https://github.com/SHINO-01/rolestash/releases/tag/v0.6.6).
