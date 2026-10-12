@@ -27,6 +27,12 @@ jobs:
         with:
           persist-credentials: false
       - id: detect
+        # Only git steps get SOURCE_TOKEN, a read-only token for the source repo
+        # (README → One-time setup), and only for its URL. Unset, git goes anonymous.
+        env:
+          GIT_CONFIG_COUNT: ${{ secrets.SOURCE_TOKEN != '' && '1' || '0' }}
+          GIT_CONFIG_KEY_0: url.https://x-access-token:${{ secrets.SOURCE_TOKEN }}@github.com/SHINO-01/rolestash.git.insteadOf
+          GIT_CONFIG_VALUE_0: https://github.com/SHINO-01/rolestash.git
         run: |
           source_url="$(git config -f .gitmodules submodule.source.url)"
           tag="$(git ls-remote --tags --refs --sort=-version:refname "${source_url}" 'v*' | head -1 | sed 's#.*refs/tags/##')"
@@ -50,6 +56,8 @@ jobs:
     uses: ./.github/workflows/integration.yml
     with:
       source_tag: ${{ needs.detect.outputs.tag }}
+    secrets:
+      SOURCE_TOKEN: ${{ secrets.SOURCE_TOKEN }}
 
   release:
     name: GitHub Release
@@ -65,8 +73,16 @@ jobs:
       GH_TOKEN: ${{ github.token }}
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
-        with:
-          submodules: true
+      # Not checkout's `submodules: true`: that sends this repo's token to the
+      # source repo, which can't read it when it's private.
+      - name: Check out the pinned source
+        # Only git steps get SOURCE_TOKEN, a read-only token for the source repo
+        # (README → One-time setup), and only for its URL. Unset, git goes anonymous.
+        env:
+          GIT_CONFIG_COUNT: ${{ secrets.SOURCE_TOKEN != '' && '1' || '0' }}
+          GIT_CONFIG_KEY_0: url.https://x-access-token:${{ secrets.SOURCE_TOKEN }}@github.com/SHINO-01/rolestash.git.insteadOf
+          GIT_CONFIG_VALUE_0: https://github.com/SHINO-01/rolestash.git
+        run: git -c http.https://github.com/.extraheader= submodule update --init --depth 1 source
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
           node-version-file: .nvmrc
@@ -75,12 +91,20 @@ jobs:
           name: extension-package
           path: dist
       - name: Pin source and update changelog
+        # Only git steps get SOURCE_TOKEN, a read-only token for the source repo
+        # (README → One-time setup), and only for its URL. Unset, git goes anonymous.
+        env:
+          GIT_CONFIG_COUNT: ${{ secrets.SOURCE_TOKEN != '' && '1' || '0' }}
+          GIT_CONFIG_KEY_0: url.https://x-access-token:${{ secrets.SOURCE_TOKEN }}@github.com/SHINO-01/rolestash.git.insteadOf
+          GIT_CONFIG_VALUE_0: https://github.com/SHINO-01/rolestash.git
+          SOURCE_TOKEN: ${{ secrets.SOURCE_TOKEN }}
         run: |
           source_url="$(git config -f .gitmodules submodule.source.url)"
           source_repo="${source_url#https://github.com/}"; source_repo="${source_repo%.git}"
-          git -C source fetch --depth 1 origin "refs/tags/${TAG}:refs/tags/${TAG}"
+          # This repo's token stays out of the source fetch (see "Check out the pinned source").
+          git -C source -c http.https://github.com/.extraheader= fetch --depth 1 origin "refs/tags/${TAG}:refs/tags/${TAG}"
           git -C source checkout --detach "${TAG}"
-          gh release view "${TAG}" -R "${source_repo}" --json body -q .body > source-notes.md
+          GH_TOKEN="${SOURCE_TOKEN:-$GH_TOKEN}" gh release view "${TAG}" -R "${source_repo}" --json body -q .body > source-notes.md
           node scripts/changelog.ts add "${TAG}" source-notes.md "https://github.com/${source_repo}"
           git add source CHANGELOG.md
           if ! git diff --cached --quiet; then
