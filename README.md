@@ -78,6 +78,19 @@ _Chrome Web Store_, review and approve it.
    (`rolestash.com/board/*` only). The policy gate allows those two only
    together, and the smoke tests check accounts mode.
 
+6. **Private source repo.** Once SHINO-01/rolestash is private, this repo
+   needs a token to read it. Create a
+   [fine-grained token](https://github.com/settings/personal-access-tokens/new):
+   resource owner SHINO-01, **only** the `rolestash` repository, permission
+   **Contents: Read-only** (Metadata: Read-only comes with it), and the longest
+   expiry you're comfortable renewing. Save it here as the Actions secret
+   `SOURCE_TOKEN`
+   (`gh secret set SOURCE_TOKEN --repo SHINO-01/rolestash-extension`), and as a
+   Dependabot secret of the same name so Dependabot PRs can run _Integration_.
+   Only the git steps that fetch the source get it, and only for that
+   repository's URL; the build never sees it. When it expires, _Detect new
+   source release_ fails: make a new one and replace the secret.
+
 ## Changing what ships
 
 - **Store text or screenshots:** edit `store/`, open a PR (runs _Integration_),
@@ -91,7 +104,9 @@ _Chrome Web Store_, review and approve it.
 
 ## Security
 
-- The build runs in _Verify_ with a read-only token and no secrets. Store
+- The build runs in _Verify_ with a read-only token and no secrets (the source
+  token is given only to the git steps that fetch the source, never to the
+  build). Store
   credentials exist only in the approval-gated `chrome-web-store` environment,
   whose job runs no source code (only the verified zip and a lockfile-pinned
   upload CLI).

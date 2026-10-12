@@ -11,6 +11,10 @@ on:
         description: Source release tag to verify (default = the pinned submodule commit)
         type: string
         required: false
+    secrets:
+      SOURCE_TOKEN:
+        description: Read-only token for the source repo (only needed while it's private)
+        required: false
 
 permissions:
   contents: read
@@ -23,15 +27,29 @@ jobs:
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
-          submodules: true
           persist-credentials: false
+      # Not checkout's `submodules: true`: that sends this repo's token to the
+      # source repo, which can't read it when it's private.
+      - name: Check out the pinned source
+        # Only git steps get SOURCE_TOKEN, a read-only token for the source repo
+        # (README → One-time setup), and only for its URL. Unset, git goes anonymous.
+        env:
+          GIT_CONFIG_COUNT: ${{ secrets.SOURCE_TOKEN != '' && '1' || '0' }}
+          GIT_CONFIG_KEY_0: url.https://x-access-token:${{ secrets.SOURCE_TOKEN }}@github.com/SHINO-01/rolestash.git.insteadOf
+          GIT_CONFIG_VALUE_0: https://github.com/SHINO-01/rolestash.git
+        run: git submodule update --init --depth 1 source
 
       # Releases verify the tag they're about to ship. Pull requests here change
       # what the *next* release may do, so they verify the newest source release.
       - name: Check out candidate source version
         if: inputs.source_tag || github.event_name == 'pull_request'
+        # Only git steps get SOURCE_TOKEN, a read-only token for the source repo
+        # (README → One-time setup), and only for its URL. Unset, git goes anonymous.
         env:
           TAG: ${{ inputs.source_tag }}
+          GIT_CONFIG_COUNT: ${{ secrets.SOURCE_TOKEN != '' && '1' || '0' }}
+          GIT_CONFIG_KEY_0: url.https://x-access-token:${{ secrets.SOURCE_TOKEN }}@github.com/SHINO-01/rolestash.git.insteadOf
+          GIT_CONFIG_VALUE_0: https://github.com/SHINO-01/rolestash.git
         run: |
           if [ -z "$TAG" ]; then
             source_url="$(git config -f .gitmodules submodule.source.url)"
