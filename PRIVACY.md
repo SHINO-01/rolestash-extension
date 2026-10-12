@@ -70,9 +70,7 @@ Full policy: https://rolestash.com/privacy/
   synced device, stored in our database in Sydney, Australia, so your devices
   stay in step. Deleting your account deletes it.
 - **Connected mailbox (Pro, if you connect Gmail):** read-only access, read
-  in the extension on your computer. Connecting Gmail is paused for everyone
-  but Google's reviewers until Google approves it (mailboxes connected
-  earlier keep working); Outlook can't be connected yet. It looks at the
+  in the extension on your computer. Until Google finishes reviewing this access, Google shows a warning that the app isn't verified; Outlook can't be connected yet. It looks at the
   sender and subject of new inbox mail to pick out job emails, downloads
   only those, and keeps the update it finds on the job's card, with the
   email's subject, sender and date as the reason, never the email. Emails

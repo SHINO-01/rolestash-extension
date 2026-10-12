@@ -43,7 +43,7 @@ FREE
 
 PRO: US$12/month, US$30 every 3 months or US$99/year, in your currency. Try it free for 14 days, no card needed.
 • Unlimited active jobs.
-• Automatic status updates: forward job emails to your private address with a filter in your mail app, and the board moves the card when a reply arrives ("we'd like to interview you", "unfortunately…"), with interview times and join links on the card. No inbox access needed: Rolestash keeps the update, never the email. Plain rules, no AI. (A read-only Gmail connection, read on your computer, is waiting for Google's review.)
+• Automatic status updates: connect Gmail (read-only) and the board moves the card when a job email arrives ("we'd like to interview you", "unfortunately…"), with interview times and join links on the card. Job emails are read on your computer, never on our servers. Google is still reviewing Rolestash's Gmail access, so it shows a warning that the app isn't verified. Prefer no inbox access? Forward job emails to your private address instead. Plain rules, no AI.
 • Full autofill: your current role, work rights, salary, notice period and saved answers too, with your profile started from your résumé (PDF or Word). It never answers demographic questions and never submits for you.
 • Insights on how your applications are going, plus contacts, interview rounds and documents for every job.
 • Reminders, closing-date alerts, custom columns, bulk actions and your full history.
@@ -51,7 +51,7 @@ PRO: US$12/month, US$30 every 3 months or US$99/year, in your currency. Try it f
 
 PRIVATE BY DESIGN
 • No AI reads your applications. Capture and email updates use plain rules.
-• Email updates need no access to your inbox: forwarded emails are read with plain rules and only the update is kept.
+• Connected Gmail is read on your computer and your emails never reach our servers. Forwarded emails are read with plain rules and only the update is kept.
 • On job sites, the button only checks whether a job posting is open; it reads nothing else, and stores and sends nothing, until you open it. Rolestash doesn't track or record the sites you visit, and you can hide the button on any site.
 • No ads, no analytics, no data selling.
 • Accounts are optional. Sign in with an emailed code, Google or a password, and turn on two-step sign-in with any authenticator app.
@@ -93,7 +93,7 @@ Collected (only when the user creates an optional account, or chooses to send a 
   - with sync on, the status update on a job card and its reason: the email's subject, sender and date (from forwarded email or a connected mailbox);
   - problem reports the user chooses to send us: their message, the extension version, browser, plan, and the page's address only if they tick it. Kept for at most 12 months.
 
-Connected Gmail (Pro, optional; offered only to testers until Google verifies it) is read in the extension on the user's computer and the emails are not sent to us; only the job updates it produces (listed above) sync if the user turns on sync. Rolestash's use of information received from Google APIs adheres to the Google API Services User Data Policy, including the Limited Use requirements.
+Connected Gmail (Pro, optional) is read in the extension on the user's computer and the emails are not sent to us; only the job updates it produces (listed above) sync if the user turns on sync. Rolestash uses no AI or machine-learning models on it. Rolestash's use of information received from Google APIs adheres to the Google API Services User Data Policy, including the Limited Use requirements.
 
 Not collected: health, financial or payment information (Paddle handles payments), location, web history, user activity.
 
