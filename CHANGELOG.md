@@ -6,6 +6,20 @@ release pipeline from the matching source release in
 records exactly which source version every package was built from.
 Developer-level history lives in the source repo's CHANGELOG.
 
+## [0.6.9] — 2026-10-13
+
+Built from source [v0.6.9](https://github.com/SHINO-01/rolestash/releases/tag/v0.6.9).
+
+### Changed
+
+- **Connecting Gmail is switched off.** Connect Gmail no longer appears for
+  anyone, and a Gmail mailbox connected earlier is disconnected: Rolestash
+  deletes its access on your computer and asks Google to revoke it. Updates it
+  already made stay on your cards. Forwarding your job emails to your private
+  address still updates your board.
+
+It replaces 0.6.8, which wasn’t published.
+
 ## [0.6.7] — 2026-10-09
 
 Built from source [v0.6.7](https://github.com/SHINO-01/rolestash/releases/tag/v0.6.7).
