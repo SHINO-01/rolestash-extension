@@ -43,7 +43,7 @@ FREE
 
 PRO: US$12/month, US$30 every 3 months or US$99/year, in your currency. Try it free for 14 days, no card needed.
 • Unlimited active jobs.
-• Automatic status updates: connect Gmail (read-only) and the board moves the card when a job email arrives ("we'd like to interview you", "unfortunately…"), with interview times and join links on the card. Job emails are read on your computer, never on our servers. Google is still reviewing Rolestash's Gmail access, so it shows a warning that the app isn't verified. Prefer no inbox access? Forward job emails to your private address instead. Plain rules, no AI.
+• Automatic status updates: forward job emails to your private Rolestash address and the board moves the card when a reply arrives ("we'd like to interview you", "unfortunately…"), with interview times and join links on the card. On Gmail, "Set up with Gmail" walks you through it on Gmail's own settings screens and confirms the forwarding for you. Rolestash never connects to your mailbox. Plain rules, no AI.
 • Full autofill: your current role, work rights, salary, notice period and saved answers too, with your profile started from your résumé (PDF or Word). It never answers demographic questions and never submits for you.
 • Insights on how your applications are going, plus contacts, interview rounds and documents for every job.
 • Reminders, closing-date alerts, custom columns, bulk actions and your full history.
@@ -51,7 +51,7 @@ PRO: US$12/month, US$30 every 3 months or US$99/year, in your currency. Try it f
 
 PRIVATE BY DESIGN
 • No AI reads your applications. Capture and email updates use plain rules.
-• Connected Gmail is read on your computer and your emails never reach our servers. Forwarded emails are read with plain rules and only the update is kept.
+• Rolestash never connects to your mailbox. You choose which emails to forward; they're read with plain rules and only the update is kept. "Set up with Gmail" uses access to Gmail's settings only during the setup, never reads your mail and gives the access back when it's done.
 • On job sites, the button only checks whether a job posting is open; it reads nothing else, and stores and sends nothing, until you open it. Rolestash doesn't track or record the sites you visit, and you can hide the button on any site.
 • No ads, no analytics, no data selling.
 • Accounts are optional. Sign in with an emailed code, Google or a password, and turn on two-step sign-in with any authenticator app.
@@ -60,7 +60,7 @@ Payments are handled by Paddle.com, our merchant of record. Privacy policy: http
 
 ## Single purpose
 
-Save job postings from web pages to a personal job-application tracker, and keep that tracker up to date: filling applications from the user's own details and recording replies from employers, from emails the user forwards or, if they connect it, their own mailbox read on their device.
+Save job postings from web pages to a personal job-application tracker, and keep that tracker up to date: filling applications from the user's own details and recording replies from employers from emails the user forwards to their private address (with an optional guided setup for Gmail forwarding).
 
 ## Permission justifications
 
@@ -71,15 +71,15 @@ Save job postings from web pages to a personal job-application tracker, and keep
 | `unlimitedStorage` | Job description snapshots can exceed the default 10 MB quota over time. |
 | `contextMenus`     | "Track this job" and "Fill this application" on the page, and "Open board" on the toolbar button. |
 | `alarms`           | Checks every 15 minutes for follow-up reminders and closing dates the user set, while the board is closed. |
-| `identity`         | Optional account sign-in with Google, and connecting Gmail read-only for status updates, through `chrome.identity.launchWebAuthFlow`. Accounts are optional and used for paid plans and sync; the mailbox connection is optional too, and mail is read on the user's computer. |
-| `notifications` (optional) | Asked for only when the user turns on follow-up reminders, closing-date alerts or notifications for status updates from their connected mailbox, to show them. |
+| `identity`         | Optional account sign-in with Google through `chrome.identity.launchWebAuthFlow`. Accounts are optional and used for paid plans and sync. It requests no mailbox access. |
+| `notifications` (optional) | Asked for only when the user turns on follow-up reminders, closing-date alerts or notifications for status updates from the emails they forward, to show them. |
 | `activeTab`        | On sites outside the job-site list: opens the Rolestash panel in the current tab, reads the job posting and fills an application form there, only after the user clicks the toolbar button or a context-menu item, or presses the shortcut. |
 | Host permissions for the supported job sites (`https://*.linkedin.com/*`, `https://*.seek.com.au/*`, `https://*.greenhouse.io/*` and the rest of `policy/manifest-policy.json`), with the `launcher` content script on the same sites | Shows the Rolestash button at the edge of job pages on the sites Rolestash supports, so a job can be saved, its application filled and its status updated from the page. The script only checks whether a job posting is open (the address and the page's schema.org job data) to label the button "Save job"; it reads nothing else and sends nothing anywhere until the user opens the panel. It never runs in subframes, and the user can hide the button per site. |
-| `https://*/*`, `http://*/*` (optional host permissions) | Asked for only when the user turns on "Show the button on all sites": the same button on every other site, registered at that moment and removed if the user turns it off. Also "Capture from a pasted link": access to that one site, asked for in the click and removed afterwards. |
+| `https://*/*`, `http://*/*` (optional host permissions) | Asked for only when the user turns on "Show the button on all sites": the same button on every other site, registered at that moment and removed if the user turns it off. Also "Capture from a pasted link": access to that one site, asked for in the click and removed afterwards. And "Set up with Gmail" (Pro, optional): `https://mail.google.com/*` only, asked for in the click and removed when the setup ends. While the setup runs, a bundled guide script is registered on Gmail to show the steps on Gmail's settings pages and fill in the forwarding address and filter. It never reads mail, and stores and sends nothing from Gmail. |
 
 `externally_connectable`: only `https://rolestash.com/board/*`, our own web board, may message the extension, to sign the web board in with the same account. No other site can.
 
-Host permissions granted at install: the job sites above, nothing else. Content scripts: one (the button), on those sites (and on all sites only if the user turns that on), top frames only. Web-accessible resources: the panel page and the button's icon, which hold no data. Remote code: none. Every script, including the PDF reader used to read a résumé on the device, is bundled in the package.
+Host permissions granted at install: the job sites above, nothing else. Content scripts: one (the button), on those sites (and on all sites only if the user turns that on), top frames only; plus the Gmail setup guide, registered on mail.google.com only while the user runs "Set up with Gmail". Web-accessible resources: the panel page and the button's icon, which hold no data. Remote code: none. Every script, including the PDF reader used to read a résumé on the device, is bundled in the package.
 
 ## Data usage disclosures (dashboard → Privacy)
 
@@ -89,11 +89,11 @@ Collected (only when the user creates an optional account, or chooses to send a 
 - **Authentication information:** sign-in session tokens; a password only if the user adds one (sent to our sign-in provider, Supabase Auth, over HTTPS and stored only as a salted hash); and, only if the user turns on two-step sign-in, the authenticator app's secret key, kept by Supabase Auth to check their codes.
 - **Website content:** the job postings the user saves, with their notes, when they turn on sync.
 - **Personal communications:**
-  - emails the user chooses to forward for automatic status updates (Pro). They're read in memory, and only the extracted update is kept, for at most 90 days;
-  - with sync on, the status update on a job card and its reason: the email's subject, sender and date (from forwarded email or a connected mailbox);
+  - emails the user chooses to forward for automatic status updates (Pro). They're read in memory, and only the extracted update is kept, for at most 90 days. When the user sets up Gmail forwarding, our email service opens Gmail's forwarding confirmation link to confirm it for them;
+  - with sync on, the status update on a job card and its reason: the forwarded email's subject, sender and date;
   - problem reports the user chooses to send us: their message, the extension version, browser, plan, and the page's address only if they tick it. Kept for at most 12 months.
 
-Connected Gmail (Pro, optional) is read in the extension on the user's computer and the emails are not sent to us; only the job updates it produces (listed above) sync if the user turns on sync. Rolestash uses no AI or machine-learning models on it. Rolestash's use of information received from Google APIs adheres to the Google API Services User Data Policy, including the Limited Use requirements.
+Rolestash doesn't connect to the user's mailbox (Connect Gmail was removed in 0.6.9). "Set up with Gmail" (Pro, optional) uses temporary access to mail.google.com in the user's browser only to show the forwarding steps and fill in the address and filter; it reads no mail, sends nothing from Gmail to us, and the access is removed when the setup ends. Rolestash uses no AI or machine-learning models on email. Rolestash's use of information received from Google APIs (Google sign-in) adheres to the Google API Services User Data Policy, including the Limited Use requirements.
 
 Not collected: health, financial or payment information (Paddle handles payments), location, web history, user activity.
 
