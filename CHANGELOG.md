@@ -6,6 +6,34 @@ release pipeline from the matching source release in
 records exactly which source version every package was built from.
 Developer-level history lives in the source repo's CHANGELOG.
 
+## [0.6.10] — 2026-10-13
+
+Built from source [v0.6.10](https://github.com/SHINO-01/rolestash/releases/tag/v0.6.10).
+
+### Added
+
+- **Set up with Gmail.** One button in Account opens Gmail and walks you
+  through forwarding your job emails, on Gmail's own screens: Rolestash fills
+  in your address and the filter, does what it can for you, and highlights
+  each remaining click. Chrome asks once for access to Gmail's settings for
+  the setup, and Rolestash gives it back when it's done. It never reads your
+  mail. Google asks you to confirm it's you twice along the way. It opens in a
+  window of its own, so your board stays where it was.
+- **Your board on your phone, from the header:** the phone button shows a code
+  to scan. It opens your board at rolestash.com/board, ready to add to your
+  home screen.
+- **The guided tour shows more:** it opens the board menu to show what's in
+  it, opens the Account panel and walks through sync and automatic status
+  updates, and points out the new phone button. Help → How do I…? has the same
+  steps.
+
+### Changed
+
+- **No more confirmation code.** When Gmail sends its forwarding confirmation,
+  Rolestash confirms it for you.
+- **A simpler Automatic status updates section:** one Gmail button, a "Not
+  using Gmail?" link for other mail apps, and the rest under Settings.
+
 ## [0.6.9] — 2026-10-13
 
 Built from source [v0.6.9](https://github.com/SHINO-01/rolestash/releases/tag/v0.6.9).
