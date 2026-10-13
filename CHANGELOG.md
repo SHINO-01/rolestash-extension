@@ -6,6 +6,29 @@ release pipeline from the matching source release in
 records exactly which source version every package was built from.
 Developer-level history lives in the source repo's CHANGELOG.
 
+## [0.6.11] — 2026-10-13
+
+Built from source [v0.6.11](https://github.com/SHINO-01/rolestash/releases/tag/v0.6.11).
+
+### Fixed
+
+- **The widget opens cleanly.** It no longer flashes a dark box, then
+  "Reading this job…", then jumps to its full height: it appears once, at
+  its real size, with the job already read. Later size changes slide
+  instead of jumping.
+- **The board opens in your theme.** With Rolestash set to light and your
+  computer in dark mode (or the other way round), the board no longer
+  flashes the wrong theme, "Sign in" or "Loading your board…" while it
+  starts.
+
+### Changed
+
+- **Rolestash is half the size** (3.7 MB down to 1.9 MB). Résumé PDFs are
+  read by a small reader of our own instead of a 1.6 MB library, with the
+  same results on every résumé we tried. The scripts that fill forms and
+  guide Gmail setup are a tenth of their old size, and only the Latin
+  letters of the Inter font are included.
+
 ## [0.6.10] — 2026-10-13
 
 Built from source [v0.6.10](https://github.com/SHINO-01/rolestash/releases/tag/v0.6.10).
