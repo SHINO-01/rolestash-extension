@@ -69,16 +69,18 @@ Full policy: https://rolestash.com/privacy/
 - **Sync (Pro):** a copy of your board and a name for each
   synced device, stored in our database in Sydney, Australia, so your devices
   stay in step. Deleting your account deletes it.
-- **Connected mailbox (Pro, if you connect Gmail):** read-only access, read
-  in the extension on your computer. Until Google finishes reviewing this access, Google shows a warning that the app isn't verified; Outlook can't be connected yet. It looks at the
-  sender and subject of new inbox mail to pick out job emails, downloads
-  only those, and keeps the update it finds on the job's card, with the
-  email's subject, sender and date as the reason, never the email. Emails
-  and the access token are never sent to Rolestash's servers; with sync on,
-  the card (update and reason included) syncs like any other change.
-  Disconnect, or signing out, deletes the token (and revokes Google's).
-  Rolestash's use of information from Google APIs adheres to the Google API
-  Services User Data Policy, including the Limited Use requirements.
+- **Connected Gmail (no longer offered, from 0.6.9):** a mailbox connected
+  earlier was disconnected, its token deleted on the device and Google asked
+  to revoke it; updates it made stay on the cards. While connected it was
+  read-only and read in the extension on the computer; emails and the token
+  never reached Rolestash's servers. Rolestash's use of information from
+  Google APIs adheres to the Google API Services User Data Policy, including
+  the Limited Use requirements.
+- **Setting up Gmail forwarding (Pro, optional):** "Set up with Gmail" asks
+  for access to mail.google.com only for the setup, to show the steps on
+  Gmail's settings pages and fill in the address and filter. It never reads
+  mail there, and the access is removed when the setup ends. Our email
+  service confirms Gmail's forwarding request for you.
 - **Automatic status updates by forwarding (Pro):** you get a private forwarding
   address and choose which emails to forward. Rolestash never connects to
   your mailbox. Each forwarded email is read in memory with plain rules; we
@@ -95,8 +97,8 @@ Full policy: https://rolestash.com/privacy/
   turn it off in Account later, which also withdraws what you shared.
 
 Network: the extension talks only to the page you capture, our Supabase
-project (when you sign in, sync, use Pro features or send a problem report)
-and, if you connect Gmail, Google's Gmail API directly. To show plan prices
+project (when you sign in, sync, use Pro features or send a problem report),
+and mail.google.com only while you set up Gmail forwarding. To show plan prices
 in your currency, our server asks Paddle for the prices for your location,
 which means passing on your IP address; it's held in memory for up to 10
 minutes and never saved. Checkout, billing and Google sign-in open as pages
