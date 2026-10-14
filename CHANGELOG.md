@@ -6,6 +6,19 @@ release pipeline from the matching source release in
 records exactly which source version every package was built from.
 Developer-level history lives in the source repo's CHANGELOG.
 
+## [0.6.13] — 2026-10-14
+
+Built from source [v0.6.13](https://github.com/SHINO-01/rolestash/releases/tag/v0.6.13).
+
+### Fixed
+
+- **Set up with Gmail follows you to another account.** If you switch
+  accounts in Gmail during setup, the setup now carries on in the account
+  you switched to, instead of waiting on its inbox.
+- **Closing the photo picker keeps Account open.** Cancelling "Add photo"
+  (or any file picker, such as a résumé or a backup to import) no longer
+  closes the panel it was opened from.
+
 ## [0.6.12] — 2026-10-14
 
 Built from source [v0.6.12](https://github.com/SHINO-01/rolestash/releases/tag/v0.6.12).
