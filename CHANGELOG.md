@@ -6,6 +6,20 @@ release pipeline from the matching source release in
 records exactly which source version every package was built from.
 Developer-level history lives in the source repo's CHANGELOG.
 
+## [0.6.12] — 2026-10-14
+
+Built from source [v0.6.12](https://github.com/SHINO-01/rolestash/releases/tag/v0.6.12).
+
+### Fixed
+
+- **Set up with Gmail no longer stops at "Temporary Error (404)".** If your
+  Rolestash email isn't the Gmail account signed in to this browser, the
+  setup now opens your signed-in Gmail instead.
+- **LinkedIn jobs come with their location again.** LinkedIn's new job
+  pages hid the location, so the widget saved jobs without one. It now reads
+  the location and posted date, and the salary, workplace and job type from
+  the tags under the title. A US salary in "$" is saved as US dollars.
+
 ## [0.6.11] — 2026-10-13
 
 Built from source [v0.6.11](https://github.com/SHINO-01/rolestash/releases/tag/v0.6.11).
