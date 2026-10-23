@@ -6,6 +6,21 @@ release pipeline from the matching source release in
 records exactly which source version every package was built from.
 Developer-level history lives in the source repo's CHANGELOG.
 
+## [0.6.15] — 2026-10-23
+
+Built from source [v0.6.15](https://github.com/SHINO-01/rolestash/releases/tag/v0.6.15).
+
+### Fixed
+
+- **Set up with Gmail no longer repeats itself.** It used to click Gmail's
+  buttons for you, and could add your Rolestash address again and again, with
+  Google asking you to confirm it's you each time. Now it only highlights what
+  to click, and once your address is added it waits for Gmail's confirmation
+  instead of adding it again.
+- **Gmail's confirmation email is handled.** Rolestash confirms the address
+  for you more reliably, and if it can't, it opens Gmail's confirmation page
+  in the setup window straight away with Confirm highlighted.
+
 ## [0.6.14] — 2026-10-14
 
 Built from source [v0.6.14](https://github.com/SHINO-01/rolestash/releases/tag/v0.6.14).
