@@ -6,6 +6,18 @@ release pipeline from the matching source release in
 records exactly which source version every package was built from.
 Developer-level history lives in the source repo's CHANGELOG.
 
+## [0.6.16] — 2026-10-23
+
+Built from source [v0.6.16](https://github.com/SHINO-01/rolestash/releases/tag/v0.6.16).
+
+### Fixed
+
+- **Set up with Gmail no longer reloads in a loop.** After your address was
+  added, the setup could keep reloading Gmail's filter screen, trusting an
+  old "confirmed" from an earlier attempt. It now only trusts Gmail's
+  confirmation for this setup, reloads at most once, and otherwise opens
+  Gmail's confirmation page for you to confirm.
+
 ## [0.6.15] — 2026-10-23
 
 Built from source [v0.6.15](https://github.com/SHINO-01/rolestash/releases/tag/v0.6.15).
