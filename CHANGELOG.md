@@ -6,6 +6,18 @@ release pipeline from the matching source release in
 records exactly which source version every package was built from.
 Developer-level history lives in the source repo's CHANGELOG.
 
+## [0.6.18] — 2026-10-23
+
+Built from source [v0.6.18](https://github.com/SHINO-01/rolestash/releases/tag/v0.6.18).
+
+### Fixed
+
+- **Gmail setup no longer loops after you confirm.** The guide now sees a
+  confirmed address on Gmail's filter screen before you open the "Forward it
+  to" list, opens Gmail's confirmation page at most once per setup, and
+  brings you back to the Gmail account you set up in. If Gmail opens a
+  different account, it asks you to switch instead of starting over.
+
 ## [0.6.17] — 2026-10-23
 
 Built from source [v0.6.17](https://github.com/SHINO-01/rolestash/releases/tag/v0.6.17).
