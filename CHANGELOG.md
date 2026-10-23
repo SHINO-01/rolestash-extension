@@ -6,6 +6,33 @@ release pipeline from the matching source release in
 records exactly which source version every package was built from.
 Developer-level history lives in the source repo's CHANGELOG.
 
+## [0.6.17] — 2026-10-23
+
+Built from source [v0.6.17](https://github.com/SHINO-01/rolestash/releases/tag/v0.6.17).
+
+### Added
+
+- **Turn email updates off (and on).** Account has "Turn off": Rolestash
+  stops reading anything you forward straight away, with links to remove the
+  filter and forwarding in Gmail too.
+- **See that forwarding works.** Account says "Gmail is set up" while it
+  waits for the first email, then "Forwarding works" with the time of the
+  last one.
+
+### Changed
+
+- **Only job emails, even if Gmail forwards everything.** Set up with Gmail
+  now spots Gmail's "forward a copy of all incoming mail" and walks you to
+  turn it off, keeping just the job filter. Rolestash keeps nothing from an
+  email that isn't about a job (only that it arrived), and Account warns you
+  if lots of them arrive.
+- **Fewer promotions mistaken for job emails.** The Gmail filter looks for
+  job phrases ("your application", "interview invitation", "offer of
+  employment") instead of single words, and skips Gmail's Promotions, Social
+  and Forums tabs. Rolestash also reads the context: "your application to our
+  bootcamp", interview-prep classes and "50% off" deals are no longer read as
+  a received application, an interview or an offer.
+
 ## [0.6.16] — 2026-10-23
 
 Built from source [v0.6.16](https://github.com/SHINO-01/rolestash/releases/tag/v0.6.16).
