@@ -6,6 +6,26 @@ release pipeline from the matching source release in
 records exactly which source version every package was built from.
 Developer-level history lives in the source repo's CHANGELOG.
 
+## [0.6.19] — 2026-10-25
+
+Built from source [v0.6.19](https://github.com/SHINO-01/rolestash/releases/tag/v0.6.19).
+
+### Fixed
+
+- **Email updates find the right job more often.** A rejection with a
+  vague subject ("Amazon application: Status update") now reads the job
+  title, company and job id from the email itself, and recognises the
+  company even when its card says "Amazon Web Services (AWS)" and was saved
+  from LinkedIn. A recruiter's own name is no longer taken for the company,
+  and a similar but different job title no longer counts as a match.
+
+### Added
+
+- **Email updates learn from you.** When you file an update under a job, or
+  accept or correct a suggestion, Rolestash remembers that sender's domain,
+  the company name the email used and its title wording, so the next email
+  like it goes to the right card by itself. This stays on your device.
+
 ## [0.6.18] — 2026-10-23
 
 Built from source [v0.6.18](https://github.com/SHINO-01/rolestash/releases/tag/v0.6.18).
