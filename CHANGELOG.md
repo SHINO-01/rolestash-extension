@@ -6,6 +6,41 @@ release pipeline from the matching source release in
 records exactly which source version every package was built from.
 Developer-level history lives in the source repo's CHANGELOG.
 
+## [1.0.0] — 2026-10-28
+
+Built from source [v1.0.0](https://github.com/SHINO-01/rolestash/releases/tag/v1.0.0).
+
+### Fixed
+
+- **Set up with Gmail checks first, then does only what's left.** It reads
+  your Gmail settings and filters before anything else, so a finished setup
+  is recognised at once and nothing is made twice. It never offers to add
+  your address again once Google shows it's confirmed, never loops back to
+  creating the filter, and notices Google's confirmation within seconds.
+- **No more "I thought it was done".** Closing the Gmail window early leaves
+  "Setup not finished · 2 of 4 done" with Continue, on the board and in
+  Account. The same four steps show in Gmail and on the board, ticked as
+  they're done.
+
+### Added
+
+- **A test at the end.** Rolestash emails your Gmail a short test; when your
+  filter sends it on, the board says "Email updates are on". Every device
+  shows the same status.
+
+### Fixed
+
+- **Each account has its own board.** Signing in with another account on the
+  same browser no longer shows your jobs, settings or Gmail setup to it:
+  every account gets a board of its own, and yours is all there when you
+  sign back in. Nothing you had is moved or lost.
+
+### Changed
+
+- **Signing out hides your board** until you sign in again. On a shared
+  computer, "Sign out and remove this board" takes it off the browser
+  instead; jobs synced to your account stay there.
+
 ## [0.6.19] — 2026-10-25
 
 Built from source [v0.6.19](https://github.com/SHINO-01/rolestash/releases/tag/v0.6.19).
