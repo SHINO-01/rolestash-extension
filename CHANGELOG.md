@@ -6,6 +6,20 @@ release pipeline from the matching source release in
 records exactly which source version every package was built from.
 Developer-level history lives in the source repo's CHANGELOG.
 
+## [1.1.0] — 2026-10-30
+
+Built from source [v1.1.0](https://github.com/SHINO-01/rolestash/releases/tag/v1.1.0).
+
+### Fixed
+
+- **SEEK's "unlikely to progress" emails move the card to Rejected.** When an
+  employer marks your application on SEEK, its email ("the employer has
+  indicated on SEEK that your application is unlikely to progress further")
+  was read as an application receipt, so the card stayed where it was. It now
+  counts as a rejection, the job title and company are read from it ("Junior
+  Software Developer - AI" at the right company, not "SEEK Applications"), and
+  other employers' "unlikely to progress" emails count too.
+
 ## [1.0.0] — 2026-10-28
 
 Built from source [v1.0.0](https://github.com/SHINO-01/rolestash/releases/tag/v1.0.0).
