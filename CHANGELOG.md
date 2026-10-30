@@ -6,6 +6,38 @@ release pipeline from the matching source release in
 records exactly which source version every package was built from.
 Developer-level history lives in the source repo's CHANGELOG.
 
+## [1.2.0] — 2026-10-30
+
+Built from source [v1.2.0](https://github.com/SHINO-01/rolestash/releases/tag/v1.2.0).
+
+### Added
+
+- **"Fill from résumé" reads your whole CV.** Your work history, education,
+  certifications, projects, awards, volunteering, skills, languages and
+  summary now come in too, not just your contact details. Sections of your
+  own ("Clinical placements") are kept under their own names.
+- **It works with your CV's layout.** One column or two, dates beside the
+  title or under it, several roles at one employer, Word headings and
+  tables. CVs in German, French and Dutch are read too.
+- **Check before you save.** Everything added says "From your résumé", and
+  anything Rolestash had to guess asks you to check it. Edit, add or remove
+  any part in the profile. Reading another résumé adds only what's new.
+- **On Free too.** Free reads one résumé into your profile; Pro adds more
+  résumés' history to it. Your CV stays on this device, and the pages you
+  fill get only the form details, never your history.
+- **Your CVs, attached for you.** Keep the CV you send, and "Fill this
+  application" attaches it to the form's résumé upload: on Greenhouse,
+  Lever, Ashby, Workday, SmartRecruiters and most others. Cover letters and
+  files you chose yourself are left alone.
+- **Your profile and CVs on every device (Pro).** Turn on "Profile and CVs"
+  in Account, and your autofill profile, CVs and their files sync between
+  the browsers you sync, encrypted before they leave your browser with a
+  passphrase only you know. Rolestash can't read them. A recovery code gets
+  you back in if you forget the passphrase.
+- **A CV for each kind of role (Pro).** Keep up to 20 CVs, each with its own
+  file and the parts of your history it includes, and choose one in the
+  widget for each application. The job's card notes which CV you sent.
+
 ## [1.1.0] — 2026-10-30
 
 Built from source [v1.1.0](https://github.com/SHINO-01/rolestash/releases/tag/v1.1.0).
