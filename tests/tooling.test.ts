@@ -11,7 +11,7 @@ const policy = JSON.parse(readFileSync(resolve(root, 'policy/manifest-policy.jso
 const good = {
   manifest_version: 3,
   version: '0.2.0',
-  permissions: ['activeTab', 'scripting', 'storage', 'unlimitedStorage', 'contextMenus', 'alarms'],
+  permissions: ['activeTab', 'scripting', 'storage', 'unlimitedStorage', 'contextMenus', 'alarms', 'offscreen'],
   optional_permissions: ['notifications'],
   host_permissions: policy.hostPermissions,
   optional_host_permissions: ['https://*/*', 'http://*/*'],
@@ -79,6 +79,13 @@ test('host access, content scripts, weak CSP and wrong versions fail', () => {
     '9.9.9',
   );
   assert.equal(errors.length, 6);
+});
+
+test('packaged WebAssembly is allowed, and nothing more', () => {
+  const wasm = { extension_pages: "script-src 'self' 'wasm-unsafe-eval'; object-src 'self';" };
+  assert.deepEqual(checkManifest({ ...good, content_security_policy: wasm }, policy), []);
+  const remote = { extension_pages: "script-src 'self' 'wasm-unsafe-eval' https://cdn.example" };
+  assert.match(checkManifest({ ...good, content_security_policy: remote }, policy).join('\n'), /weakens/);
 });
 
 test('the policy matches what the source ships today', () => {
