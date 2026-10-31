@@ -90,6 +90,9 @@ jobs:
           WXT_GOOGLE_CLIENT_ID: ${{ vars.WXT_GOOGLE_CLIENT_ID }}
           WXT_GMAIL_CLIENT_ID: ${{ vars.WXT_GMAIL_CLIENT_ID }}
           WXT_MICROSOFT_CLIENT_ID: ${{ vars.WXT_MICROSOFT_CLIENT_ID }}
+          # Where the on-device AI model's weights are downloaded from (Rolestash's own
+          # storage, source ADR-0048). Unset, the build doesn't offer AI.
+          WXT_AI_MODEL_URL: ${{ vars.WXT_AI_MODEL_URL }}
         run: |
           npm run zip
           mkdir -p ../dist && cp .output/*-chrome.zip ../dist/
