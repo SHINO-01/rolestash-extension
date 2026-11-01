@@ -84,7 +84,10 @@ export function checkManifest(manifest: Manifest, policy: Policy, expectVersion?
   if (manifest.key !== undefined) errors.push('manifest key is set: that is the development build, not a release');
 
   const csp = JSON.stringify(manifest.content_security_policy ?? '');
-  if (/unsafe-eval|unsafe-inline|https?:\/\/|\*/.test(csp)) errors.push(`content_security_policy weakens the default: ${csp}`);
+  // 'wasm-unsafe-eval' lets the extension run its own packaged WebAssembly (the on-device AI
+  // model's program, source ADR-0048) and nothing else; any other weakening fails.
+  if (/unsafe-eval|unsafe-inline|https?:\/\/|\*/.test(csp.replaceAll("'wasm-unsafe-eval'", '')))
+    errors.push(`content_security_policy weakens the default: ${csp}`);
 
   if (expectVersion !== undefined && manifest.version !== expectVersion) {
     errors.push(`version ${String(manifest.version)} does not match the release ${expectVersion}`);

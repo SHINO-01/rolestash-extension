@@ -5,11 +5,11 @@ copy changes here into the developer dashboard by hand.
 
 ## Name
 
-Rolestash — Job Application Tracker
+Rolestash: Job Application Tracker
 
 ## Summary (≤132 characters)
 
-Save any job posting, fill in applications and track every reply on one private board. No AI, no data selling.
+Save any job posting, fill in applications and track every reply on one private board. AI that's local and private, just for you.
 
 ## Category
 
@@ -48,9 +48,10 @@ PRO: US$12/month, US$30 every 3 months or US$99/year, in your currency. Try it f
 • Insights on how your applications are going, plus contacts, interview rounds and documents for every job.
 • Reminders, closing-date alerts, custom columns, bulk actions and your full history.
 • Sync across up to 5 devices, including your phone: scan the QR code in Account to open your board there.
+• Tailored CVs and cover letters, with AI that's local and private, just for you: a model on your computer tailors your CV and drafts a cover letter for a job, every line is checked against your profile, and you review it before you save it. Try 3 drafts on Free.
 
 PRIVATE BY DESIGN
-• No AI reads your applications. Capture and email updates use plain rules.
+• AI that's local and private, just for you: the optional AI runs on your computer, and nothing you write is sent to an AI service. Capture and email updates use plain rules.
 • Rolestash never connects to your mailbox. You choose which emails to forward; they're read with plain rules and only the update is kept. "Set up with Gmail" uses access to Gmail's settings only during the setup, never reads your mail and gives the access back when it's done.
 • On job sites, the button only checks whether a job posting is open; it reads nothing else, and stores and sends nothing, until you open it. Rolestash doesn't track or record the sites you visit, and you can hide the button on any site.
 • No ads, no analytics, no data selling.
@@ -69,6 +70,7 @@ Save job postings from web pages to a personal job-application tracker, and keep
 | `scripting`        | Injects the bundled extraction script (to read the job) or the bundled autofill script (to fill the form) into the tab when the user opens the panel or clicks. No remote code. |
 | `storage`          | Saves the user's jobs, settings and autofill profile locally. |
 | `unlimitedStorage` | Job description snapshots can exceed the default 10 MB quota over time. |
+| `offscreen`        | Opt-in AI on the user's device: a hidden extension page runs Rolestash's own AI model with WebGPU to tailor a CV or draft a cover letter, only while the user is using it, and closes a minute after. The model's program is bundled in the package; only its weights (data) are downloaded, once, from Rolestash's own storage, after the user turns AI on. Nothing the user writes is sent anywhere. |
 | `contextMenus`     | "Track this job" and "Fill this application" on the page, and "Open board" on the toolbar button. |
 | `alarms`           | Checks every 15 minutes for follow-up reminders and closing dates the user set, while the board is closed. |
 | `identity`         | Optional account sign-in with Google through `chrome.identity.launchWebAuthFlow`. Accounts are optional and used for paid plans and sync. It requests no mailbox access. |
@@ -79,7 +81,7 @@ Save job postings from web pages to a personal job-application tracker, and keep
 
 `externally_connectable`: only `https://rolestash.com/board/*`, our own web board, may message the extension, to sign the web board in with the same account. No other site can.
 
-Host permissions granted at install: the job sites above, nothing else. Content scripts: one (the button), on those sites (and on all sites only if the user turns that on), top frames only; plus the Gmail setup guide, registered on mail.google.com only while the user runs "Set up with Gmail". Web-accessible resources: the panel page and the button's icon, which hold no data. Remote code: none. Every script, including the PDF reader used to read a résumé on the device, is bundled in the package.
+Host permissions granted at install: the job sites above, nothing else. Content scripts: one (the button), on those sites (and on all sites only if the user turns that on), top frames only; plus the Gmail setup guide, registered on mail.google.com only while the user runs "Set up with Gmail". Web-accessible resources: the panel page and the button's icon, which hold no data. Remote code: none. Every script, including the PDF reader used to read a résumé on the device and the on-device AI model's WebAssembly program, is bundled in the package; the CSP allows `'wasm-unsafe-eval'` for that packaged program only. The AI model's weights are data, downloaded from Rolestash's own storage when the user turns AI on.
 
 ## Data usage disclosures (dashboard → Privacy)
 

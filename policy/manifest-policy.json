@@ -4,6 +4,7 @@
     "activeTab",
     "alarms",
     "contextMenus",
+    "offscreen",
     "scripting",
     "storage",
     "unlimitedStorage"
@@ -131,5 +132,5 @@
     "widget.html",
     "icon/48.png"
   ],
-  "maxPackageKB": 1280
+  "maxPackageKB": 8192
 }
