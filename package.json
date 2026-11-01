@@ -11,6 +11,6 @@
     "check:package": "node scripts/check-package.ts"
   },
   "devDependencies": {
-    "chrome-webstore-upload-cli": "4.0.1"
+    "chrome-webstore-upload-cli": "4.0.2"
   }
 }
