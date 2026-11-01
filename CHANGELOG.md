@@ -6,6 +6,28 @@ release pipeline from the matching source release in
 records exactly which source version every package was built from.
 Developer-level history lives in the source repo's CHANGELOG.
 
+## [1.4.0] — 2026-11-01
+
+Built from source [v1.4.0](https://github.com/SHINO-01/rolestash/releases/tag/v1.4.0).
+
+### Added
+
+- **Auto apply (Pro).** Turn it on under AI on this computer, and on a
+  job's application page one click tailors your CV, writes your cover
+  letter, fills the form with both attached, answers its questions from your
+  profile and submits it, after 5 seconds to cancel or straight away if you
+  choose. The job moves to Applied with the CV, letter and answers that
+  went. It never answers sensitive questions or gives consent for you, and
+  doesn't send while a required question is left or a CAPTCHA shows.
+- **Draft answers with AI.** After filling a form, Rolestash can answer its
+  open questions from your profile. Answers it can't back from your profile
+  stay empty, and drafted ones are outlined in amber for you to check.
+- **Use a tailored CV and letter when applying.** On the review screen,
+  "Use for this job" keeps your reviewed CV and cover letter with the job;
+  filling its application attaches them.
+- **The submit button is highlighted** after filling, and the widget lists
+  required questions still empty.
+
 ## [1.3.1] — 2026-11-01
 
 Built from source [v1.3.1](https://github.com/SHINO-01/rolestash/releases/tag/v1.3.1).
