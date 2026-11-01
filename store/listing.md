@@ -9,7 +9,7 @@ Rolestash — Job Application Tracker
 
 ## Summary (≤132 characters)
 
-Save any job posting, fill in applications and track every reply on one private board. No AI, no data selling.
+Save any job posting, fill in applications and track every reply on one private board. AI that's local and private, just for you.
 
 ## Category
 
@@ -48,9 +48,10 @@ PRO: US$12/month, US$30 every 3 months or US$99/year, in your currency. Try it f
 • Insights on how your applications are going, plus contacts, interview rounds and documents for every job.
 • Reminders, closing-date alerts, custom columns, bulk actions and your full history.
 • Sync across up to 5 devices, including your phone: scan the QR code in Account to open your board there.
+• Tailored CVs and cover letters, with AI that's local and private, just for you: a model on your computer tailors your CV and drafts a cover letter for a job, every line is checked against your profile, and you review it before you save it. Try 3 drafts on Free.
 
 PRIVATE BY DESIGN
-• No AI reads your applications. Capture and email updates use plain rules.
+• AI that's local and private, just for you: the optional AI runs on your computer, and nothing you write is sent to an AI service. Capture and email updates use plain rules.
 • Rolestash never connects to your mailbox. You choose which emails to forward; they're read with plain rules and only the update is kept. "Set up with Gmail" uses access to Gmail's settings only during the setup, never reads your mail and gives the access back when it's done.
 • On job sites, the button only checks whether a job posting is open; it reads nothing else, and stores and sends nothing, until you open it. Rolestash doesn't track or record the sites you visit, and you can hide the button on any site.
 • No ads, no analytics, no data selling.
