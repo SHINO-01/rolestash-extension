@@ -5,7 +5,7 @@ copy changes here into the developer dashboard by hand.
 
 ## Name
 
-Rolestash — Job Application Tracker
+Rolestash: Job Application Tracker
 
 ## Summary (≤132 characters)
 
