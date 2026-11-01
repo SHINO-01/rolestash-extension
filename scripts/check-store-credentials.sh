@@ -70,3 +70,8 @@ scope="$(jq -r '.scope // ""' <<<"$response")"
 
 echo "Chrome Web Store credentials work (scope: ${scope})."
 printf '**Chrome Web Store credentials:** working.\n' >>"$summary"
+
+# And what the store says about the item (a refused publish says why here).
+if [ "${STORE_STATUS:-}" = "1" ]; then
+  bash "$(dirname "$0")/store-status.sh"
+fi
