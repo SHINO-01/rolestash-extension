@@ -6,6 +6,15 @@ release pipeline from the matching source release in
 records exactly which source version every package was built from.
 Developer-level history lives in the source repo's CHANGELOG.
 
+## [1.3.1] — 2026-11-01
+
+Built from source [v1.3.1](https://github.com/SHINO-01/rolestash/releases/tag/v1.3.1).
+
+### Changed
+
+- **The extension's name reads "Rolestash: Job Application Tracker",** and
+  page titles across the extension and rolestash.com use a plain separator.
+
 ## [1.2.0] — 2026-10-30
 
 Built from source [v1.2.0](https://github.com/SHINO-01/rolestash/releases/tag/v1.2.0).
