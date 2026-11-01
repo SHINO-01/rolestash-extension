@@ -44,11 +44,12 @@ FREE
 PRO: US$12/month, US$30 every 3 months or US$99/year, in your currency. Try it free for 14 days, no card needed.
 • Unlimited active jobs.
 • Automatic status updates: forward job emails to your private Rolestash address and the board moves the card when a reply arrives ("we'd like to interview you", "unfortunately…"), with interview times and join links on the card. On Gmail, "Set up with Gmail" walks you through it on Gmail's own settings screens and confirms the forwarding for you. Rolestash never connects to your mailbox. Plain rules, no AI.
-• Full autofill: your current role, work rights, salary, notice period and saved answers too, with your profile started from your résumé (PDF or Word). It never answers demographic questions and never submits for you.
+• Full autofill: your current role, work rights, salary, notice period and saved answers too, with your profile started from your résumé (PDF or Word). It never answers demographic questions, and submits for you only if you turn on Auto apply.
 • Insights on how your applications are going, plus contacts, interview rounds and documents for every job.
 • Reminders, closing-date alerts, custom columns, bulk actions and your full history.
 • Sync across up to 5 devices, including your phone: scan the QR code in Account to open your board there.
 • Tailored CVs and cover letters, with AI that's local and private, just for you: a model on your computer tailors your CV and drafts a cover letter for a job, every line is checked against your profile, and you review it before you save it. Try 3 drafts on Free.
+• Auto apply, if you turn it on: one click tailors your CV, writes your cover letter, fills the application with both attached, answers its questions from your profile and submits it, after 5 seconds to cancel or straight away. It never answers sensitive questions or gives consent for you, and doesn't send while a required question is left. The job moves to Applied with what was sent.
 
 PRIVATE BY DESIGN
 • AI that's local and private, just for you: the optional AI runs on your computer, and nothing you write is sent to an AI service. Capture and email updates use plain rules.
