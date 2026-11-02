@@ -6,6 +6,82 @@ release pipeline from the matching source release in
 records exactly which source version every package was built from.
 Developer-level history lives in the source repo's CHANGELOG.
 
+## [1.5.0] — 2026-11-02
+
+Built from source [v1.5.0](https://github.com/SHINO-01/rolestash/releases/tag/v1.5.0).
+
+### Added
+
+- **How ready your profile is.** The autofill profile opens with a meter
+  and the next things to add, each saying what it's for ("Phone: fills most
+  applications"). It counts only what Rolestash uses, and a click takes you
+  to where it's filled in.
+- **Your match on every card.** Each job on the board shows how well it
+  fits you ("87% match"), scored on this device from the ad and your
+  profile; hover for what's missing.
+- **"I have this" for a gap.** A skill the job asks for that your profile
+  doesn't show is one click from your profile, and every match updates.
+- **Your resume, from your profile.** Board menu, Your resume: your profile
+  laid out as a resume, previewed and saved as a PDF on this device, with
+  no AI. Classic on every plan; Modern, Serif and Compact on Pro.
+- **A resume for each job (Pro).** In a job's Resume and email section,
+  make a copy of your resume for that job, edit any line, and save it: each
+  save is a version kept with the job, and the latest is the one attached
+  when you fill its application.
+- **The email to send with an application.** One click fills a short email
+  from the job and your profile, to edit, copy or open in your mail app.
+- **A table of your jobs.** Switch the board to a table and sort by
+  company, stage, match, date applied, salary, follow-up or closing date.
+  Select rows for bulk actions as on the board.
+- **A calendar of your jobs.** Interviews, follow-ups and closing dates on
+  a month; click one to open the job.
+- **Your board in your calendar app (Pro).** On the calendar view, turn on
+  a private link that Google, Apple or Outlook calendar subscribes to,
+  kept up to date from your synced jobs. Notes and contacts never go in,
+  and you can get a new link or turn it off at any time.
+- **Companies you hid stay off the board.** Jobs from a company you hid
+  are out of sight, with a note to show them again.
+- **Automatic backups on this computer.** Once a day, when your board has
+  changed, Rolestash keeps a copy of your jobs and settings on this
+  computer, the last 7 of them. Settings, Your data:
+  restore
+  one in a click (a copy of your board as it was is kept first, so you can
+  undo it), or save it as a file.
+- **Delete everything.** In Settings, Your data, Automatic backups, delete everything
+  Rolestash keeps in this browser in one go: boards, profile, CVs,
+  documents, backups, settings and the AI model.
+- **The ad's words for a skill.** When a line of your resume names a skill
+  the job ad spells another way (Postgres where the ad says PostgreSQL, JS
+  where it says JavaScript), Rolestash offers the ad's words, in a job's
+  resume and in a tailored CV draft. It's the same skill, so nothing is
+  added, and it changes only when you click.
+- **A tidier job panel.** A job's details now open in three tabs: Overview
+  (details, tags, notes and the ad), Apply (your match, tailoring, resume
+  and email) and Track (follow-up, interviews, contacts, documents and
+  history). An upcoming interview stays at the top.
+- **Easier with a screen reader and keyboard.** Cards read out their
+  match, pay and dates; the calendar can be explored day by day; every
+  field in the job panel has a label; calendar entries are bigger to
+  click; and faded days in the calendar are easier to read.
+- **A simpler board.** Fewer buttons at the top: search, Add job, your
+  account, help and one menu. The menu has six things in it (your profile,
+  your resume, Insights, History, your board on your phone and Settings).
+- **Settings in one place.** Theme, the Save job button, closing-date
+  alerts, columns, downloads and backups are now in Settings, in three
+  short tabs, each with one line saying what it does.
+- **Your profile, step by step.** The autofill profile is now six small
+  steps (Start, You, Where, Work, Wants, Extras) with Back and Next, and
+  you can save from any step. The readiness meter takes you straight to
+  the step that needs something.
+- **Adding a job takes two fields.** Just the job title and company; the
+  location, link and column are under More details.
+
+### Security
+
+- The email updates service reads forwarded emails with a newer version of
+  its email parser, which fixes a slowdown a crafted email header could
+  cause. Test tools updated to versions without known vulnerabilities.
+
 ## [1.4.0] — 2026-11-01
 
 Built from source [v1.4.0](https://github.com/SHINO-01/rolestash/releases/tag/v1.4.0).
