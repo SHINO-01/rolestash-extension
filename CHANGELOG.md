@@ -6,6 +6,30 @@ release pipeline from the matching source release in
 records exactly which source version every package was built from.
 Developer-level history lives in the source repo's CHANGELOG.
 
+## [1.7.0] — 2026-11-06
+
+Built from source [v1.7.0](https://github.com/SHINO-01/rolestash/releases/tag/v1.7.0).
+
+### Added
+
+- **Apply to 20 jobs in one press (Pro).** On the Auto apply tab, choose a
+  match range (65 to 99% to start) and how many, then Apply: Rolestash
+  searches the jobs it collects from 60 job boards and employers' own
+  boards, puts each on your board, writes its CV and cover letter, fills the
+  form and answers its questions, one job at a time. It presses send only
+  if you turn on Press send for me; otherwise each waits in its tab for you.
+- **Questions answered from the job and you.** Each form's questions are
+  answered for that job: the AI draws on the ad, your skills and where your
+  work shows them, your projects and your saved answers. Questions only the
+  company asks ("Why do you want to work here?") are answered on the spot.
+- **Equal-opportunity questions and consents, your way.** Your profile now
+  holds your answers to equal-opportunity questions (each can be Prefer not
+  to say) and whether Rolestash may accept a form's required consents for
+  you. Optional consents, identity numbers and passwords are never filled.
+- **Saved answers about your strengths.** Write them for me now drafts who
+  you are, your strengths, the skills you'd bring, an achievement and a
+  project: the part of an application that doesn't depend on the company.
+
 ## [1.6.1] — 2026-11-06
 
 Built from source [v1.6.1](https://github.com/SHINO-01/rolestash/releases/tag/v1.6.1).
