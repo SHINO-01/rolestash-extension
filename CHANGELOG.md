@@ -6,6 +6,16 @@ release pipeline from the matching source release in
 records exactly which source version every package was built from.
 Developer-level history lives in the source repo's CHANGELOG.
 
+## [1.6.1] — 2026-11-06
+
+Built from source [v1.6.1](https://github.com/SHINO-01/rolestash/releases/tag/v1.6.1).
+
+### Fixed
+
+- **1.6.0 reaches the Chrome Web Store.** Everything in 1.6.0, below; that
+  version stopped at a release check written for the old "part of Pro"
+  message, and never went out.
+
 ## [1.5.0] — 2026-11-02
 
 Built from source [v1.5.0](https://github.com/SHINO-01/rolestash/releases/tag/v1.5.0).
