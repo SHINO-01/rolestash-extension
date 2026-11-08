@@ -6,6 +6,35 @@ release pipeline from the matching source release in
 records exactly which source version every package was built from.
 Developer-level history lives in the source repo's CHANGELOG.
 
+## [1.8.0] — 2026-11-08
+
+Built from source [v1.8.0](https://github.com/SHINO-01/rolestash/releases/tag/v1.8.0).
+
+### Added
+
+- **Auto apply goes through forms that run for pages.** Workday, iCIMS,
+  SuccessFactors and other multi-page applications are filled page by page,
+  to the last one. It never presses send unless you turned on Press send
+  for me, and stops for you at a sign-in, a CAPTCHA or anything it can't
+  answer, saying how many pages it filled.
+- **A better AI model on your computer.** It now answers application
+  questions as well as it writes CVs and cover letters. If you use AI,
+  download the update once in Settings (about 350 MB); the old model is
+  then removed.
+
+### Fixed
+
+- **Short answers are kept.** Answers like "4 weeks" or "Ottawa, Canada" to
+  a one-line question were thrown away and left empty.
+- **Years of experience in German, French and Dutch.** "5 Jahre" or "7 ans"
+  was checked as a stray number and dropped.
+- **The match no longer counts company values as skills.** "Unity" in a
+  list of values, or "embedded" in a sentence, isn't a required skill, and
+  "What we are looking for" is read as the requirements.
+- **A click outside a panel no longer closes it.** Your profile, settings
+  and other panels close with their X (or Esc), so a stray click doesn't
+  lose what you typed.
+
 ## [1.7.0] — 2026-11-06
 
 Built from source [v1.7.0](https://github.com/SHINO-01/rolestash/releases/tag/v1.7.0).
