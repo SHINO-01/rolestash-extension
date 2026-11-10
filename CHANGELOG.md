@@ -6,6 +6,52 @@ release pipeline from the matching source release in
 records exactly which source version every package was built from.
 Developer-level history lives in the source repo's CHANGELOG.
 
+## [1.9.0] — 2026-11-10
+
+Built from source [v1.9.0](https://github.com/SHINO-01/rolestash/releases/tag/v1.9.0).
+
+### Added
+
+- **A notice when our servers are being worked on.** A banner on the board
+  (and a short pause of syncing and email checks, if needed) tells you when
+  Rolestash's online features are down or moving, and when they'll be back.
+  Everything on your computer keeps working.
+
+- **Rolestash speaks German, French and Dutch.** Choose the language in
+  Settings → General, or leave it on Automatic to follow your browser. The
+  whole interface changes: the board, the save panel and button on job
+  sites, the Gmail setup guide, notifications, dates and numbers. Your
+  default columns follow the language; columns you renamed stay as you
+  named them. What goes to employers (CVs, cover letters, emails) stays in
+  the language you write it in.
+
+### Changed
+
+- **rolestash.com loads faster.** Its styles and scripts are smaller, and
+  a returning visitor's browser keeps them for a year instead of a day,
+  fetching a fresh copy only when one changes.
+- **Jobs for you and Auto apply respect where you can work.** They look in
+  the places you prefer and your home country (and anywhere you have work
+  rights, if you'd move). A job in a country where you can't work is
+  suggested only when the ad says it sponsors a visa.
+- **Email updates read German, French and Dutch.** Employers' emails
+  saying your application arrived, inviting you to interview, turning you
+  down or making an offer move the card in those languages too, and a new
+  Gmail setup forwards them.
+- **More jobs from employers' own boards.** The job collector now reads a
+  few different sites each minute instead of getting stuck on one busy
+  site, so employers' boards (the forms Auto apply fills) come in sooner,
+  and it now reads employers hiring in New Zealand, the UK, Ireland,
+  Germany, France, the Netherlands and the US. It also finds employers'
+  boards in Common Crawl's open index: over 5,000 more boards on Greenhouse,
+  Lever, Ashby, Workday, Personio, Recruitee, Workable and Teamtailor, in
+  every market Rolestash serves. Jobs from USAJOBS (the US government),
+  Jooble and Arbeitnow join them, and job pages built by script are now
+  read too.
+- **AI answers are checked against your profile.** A long answer the model
+  wrote that doesn't come from your profile is dropped, so you fill it in
+  yourself instead of sending something made up.
+
 ## [1.8.0] — 2026-11-08
 
 Built from source [v1.8.0](https://github.com/SHINO-01/rolestash/releases/tag/v1.8.0).
