@@ -72,15 +72,26 @@ jobs:
         run: npm ci && npm test
 
       # Health: new advisories can appear after the source was tested.
-      # Signing keys are fetched fresh (--prefer-online): a cached, older key
-      # list failed releases with EMISSINGSIGNATUREKEY (magic-string 1.4.5,
-      # November 2026). One retry for a registry hiccup; a real signature
-      # failure fails both.
+      # npm's signature check fails now and then on CI with EMISSINGSIGNATUREKEY
+      # for a package whose attestations verify everywhere else (magic-string
+      # 1.4.5, November 2026; the same setup passed and failed within the hour).
+      # So up to three tries, 30 s and 90 s apart; a real signature problem fails
+      # all three. If it does, what the registry sent for each package it
+      # rejected goes to the log, to find the cause.
       - name: Install & audit source dependencies
         working-directory: source
         run: |
           npm ci
-          npm audit signatures --prefer-online || { sleep 20; npm audit signatures --prefer-online; }
+          verify() { npm audit signatures --prefer-online 2>&1 | tee -a audit-signatures.log; }
+          verify || { sleep 30; verify; } || { sleep 90; verify; } || {
+            for pkg in $(grep -oE '[@a-z0-9./_-]+@[0-9][^ ]* has attestations' audit-signatures.log | sed 's/ has attestations//' | sort -u); do
+              echo "::group::What the registry sent for ${pkg}"
+              curl -s "https://registry.npmjs.org/-/npm/v1/attestations/${pkg}" | head -c 2000; echo
+              echo "::endgroup::"
+            done
+            curl -s https://registry.npmjs.org/-/npm/v1/keys
+            exit 1
+          }
           npm audit --omit=dev --audit-level=high
 
       # Accounts are on only when these repository variables are set (public values:
