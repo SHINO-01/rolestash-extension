@@ -6,6 +6,20 @@ release pipeline from the matching source release in
 records exactly which source version every package was built from.
 Developer-level history lives in the source repo's CHANGELOG.
 
+## [1.9.1] — 2026-11-17
+
+Built from source [v1.9.1](https://github.com/SHINO-01/rolestash/releases/tag/v1.9.1).
+
+### Fixed
+
+- **Jobs for you shows jobs again.** Since 6 November every job the
+  collector sent was missing the time it was read, so Jobs for you (and Auto
+  apply's search) set them all aside and showed nothing. Fixed on our side:
+  press "Look again".
+- **Auto apply ticks your profile as soon as it's complete.** Finishing your
+  profile from the Auto apply page now updates its checklist straight away,
+  instead of after reopening the page.
+
 ## [1.9.0] — 2026-11-10
 
 Built from source [v1.9.0](https://github.com/SHINO-01/rolestash/releases/tag/v1.9.0).
