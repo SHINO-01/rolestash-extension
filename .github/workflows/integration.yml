@@ -72,11 +72,15 @@ jobs:
         run: npm ci && npm test
 
       # Health: new advisories can appear after the source was tested.
+      # Signing keys are fetched fresh (--prefer-online): a cached, older key
+      # list failed releases with EMISSINGSIGNATUREKEY (magic-string 1.4.5,
+      # November 2026). One retry for a registry hiccup; a real signature
+      # failure fails both.
       - name: Install & audit source dependencies
         working-directory: source
         run: |
           npm ci
-          npm audit signatures
+          npm audit signatures --prefer-online || { sleep 20; npm audit signatures --prefer-online; }
           npm audit --omit=dev --audit-level=high
 
       # Accounts are on only when these repository variables are set (public values:
